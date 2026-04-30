@@ -22,7 +22,6 @@
   @keyframes scanDown{from{top:-2px}to{top:100vh}}
   .wrapper{position:relative;z-index:1;max-width:1040px;margin:0 auto;padding:1.5rem 1.5rem 3rem;}
 
-  /* TOP BAR */
   .topbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:.85rem;margin-bottom:1.8rem;animation:fadeDown .6s ease both;}
   .topbar-left{display:flex;align-items:center;gap:12px;}
   .arc-reactor{width:44px;height:44px;position:relative;display:flex;align-items:center;justify-content:center;}
@@ -39,18 +38,15 @@
   .dot.purple{background:var(--purple);box-shadow:0 0 8px var(--purple);}
   .clock{font-family:'Orbitron',monospace;font-size:13px;color:var(--cyan);letter-spacing:2px;}
 
-  /* HERO */
   .hero{text-align:center;margin-bottom:1.8rem;animation:fadeUp .8s ease .1s both;}
   .hero-label{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text-dim);letter-spacing:4px;margin-bottom:.6rem;}
   .hero h1{font-family:'Orbitron',monospace;font-size:clamp(22px,4vw,44px);font-weight:900;color:var(--cyan);letter-spacing:8px;text-shadow:0 0 40px rgba(0,212,255,0.3);margin-bottom:.3rem;}
   .hero-tagline{font-size:12px;color:var(--text-dim);letter-spacing:3px;font-weight:300;}
   .ai-badge{display:inline-flex;align-items:center;gap:6px;margin-top:.6rem;padding:4px 12px;border:1px solid rgba(168,85,247,0.4);border-radius:2px;background:rgba(168,85,247,0.07);font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--purple);letter-spacing:2px;}
 
-  /* MAIN LAYOUT */
   .main-grid{display:grid;grid-template-columns:1fr 340px;gap:1.2rem;margin-bottom:1.5rem;}
   @media(max-width:700px){.main-grid{grid-template-columns:1fr;}}
 
-  /* VOICE AREA */
   .voice-area{display:flex;flex-direction:column;align-items:center;padding:1.5rem 1rem;background:var(--panel);border:1px solid var(--border);border-radius:4px;position:relative;animation:fadeUp .8s ease .2s both;}
   .voice-area::before{content:'SESLI ARAYÜZ';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .orb-wrapper{position:relative;width:150px;height:150px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
@@ -75,13 +71,11 @@
   .stop-btn:hover{background:rgba(255,51,68,0.1);}
   .stop-btn.show{display:block;}
 
-  /* VOICE HINT */
   .voice-hint{margin-top:10px;width:100%;background:rgba(0,212,255,0.03);border:1px solid rgba(0,212,255,0.1);border-radius:4px;padding:8px 12px;}
   .voice-hint-title{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);letter-spacing:2px;margin-bottom:5px;}
   .voice-hint-examples{display:flex;flex-wrap:wrap;gap:5px;}
   .voice-chip{font-family:'Share Tech Mono',monospace;font-size:8px;padding:3px 8px;border:1px solid rgba(37,211,102,0.2);border-radius:10px;color:#25d366;background:rgba(37,211,102,0.05);}
 
-  /* CONVERSATION */
   .conversation{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:1rem 1.1rem;position:relative;min-height:120px;max-height:360px;overflow-y:auto;animation:fadeUp .6s ease .3s both;}
   .conversation::before{content:'KONUŞMA GEÇMİŞİ';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .conv-placeholder{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--text-muted);letter-spacing:2px;text-align:center;padding:1.5rem 0;}
@@ -103,7 +97,6 @@
   .typing-dots span:nth-child(2){animation-delay:.15s;}
   .typing-dots span:nth-child(3){animation-delay:.3s;}
 
-  /* TEXT INPUT */
   .text-input-area{display:flex;gap:8px;margin-top:.75rem;}
   .text-input{flex:1;background:rgba(0,212,255,0.04);border:1px solid var(--border);border-radius:2px;padding:8px 12px;color:var(--text);font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1px;outline:none;transition:border-color .2s;}
   .text-input:focus{border-color:var(--border-bright);}
@@ -111,20 +104,18 @@
   .send-btn{font-family:'Orbitron',monospace;font-size:10px;font-weight:700;letter-spacing:1px;padding:8px 16px;background:rgba(0,212,255,0.08);border:1px solid var(--border-bright);color:var(--cyan);border-radius:2px;cursor:pointer;transition:all .2s;}
   .send-btn:hover{background:rgba(0,212,255,0.15);}
 
-  /* QUICK COMMANDS */
   .cmd-panel{background:var(--panel);border:1px solid var(--border);border-radius:4px;animation:fadeUp .6s ease .45s both;overflow:hidden;}
-  .cmd-tabs{display:flex;border-bottom:1px solid var(--border);}
+  .cmd-tabs{display:flex;border-bottom:1px solid var(--border);flex-wrap:wrap;}
   .cmd-tab{flex:1;font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1.5px;padding:8px 6px;background:transparent;border:none;color:var(--text-muted);cursor:pointer;transition:all .2s;text-align:center;}
   .cmd-tab.active{color:var(--cyan);background:rgba(0,212,255,0.06);border-bottom:1px solid var(--cyan);}
   .cmd-tab:hover:not(.active){color:var(--text-dim);}
-  .cmd-tab-content{display:none;padding:10px;}
-  .cmd-tab-content.active{display:flex;flex-wrap:wrap;gap:7px;}
+  .cmd-tab-content{display:none;padding:10px;flex-wrap:wrap;gap:7px;}
+  .cmd-tab-content.active{display:flex;}
   .cmd-btn{font-family:'Share Tech Mono',monospace;font-size:10px;padding:5px 12px;border:1px solid var(--border);border-radius:2px;background:var(--panel);color:var(--text-dim);cursor:pointer;letter-spacing:1px;transition:all .2s;}
   .cmd-btn:hover{border-color:var(--border-bright);color:var(--cyan);background:rgba(0,212,255,0.07);}
   .cmd-btn.wa{border-color:rgba(37,211,102,0.3);color:#25d366;}
   .cmd-btn.wa:hover{border-color:#25d366;background:rgba(37,211,102,0.08);}
 
-  /* SYS CARDS */
   .sys-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1.2rem;animation:fadeUp .6s ease .5s both;}
   .sys-card{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.75rem 1rem;position:relative;overflow:hidden;}
   .sys-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--cyan);opacity:0.15;}
@@ -135,7 +126,6 @@
   .sys-card-val.red{color:var(--red);}
   .sys-card-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);letter-spacing:1px;margin-top:3px;}
 
-  /* WEATHER */
   .weather-box{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.9rem 1rem;margin-bottom:1.2rem;animation:fadeUp .6s ease .55s both;position:relative;}
   .weather-box::before{content:'HAVA DURUMU';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .weather-inner{display:flex;align-items:center;gap:16px;}
@@ -147,11 +137,8 @@
   .weather-details{display:flex;gap:14px;margin-top:4px;}
   .weather-detail{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:1px;}
 
-  /* WHATSAPP — MAIN MODULE */
   .wa-box{background:var(--panel);border:1px solid rgba(37,211,102,0.3);border-radius:4px;padding:.9rem 1rem;margin-bottom:1.2rem;animation:fadeUp .6s ease .58s both;position:relative;}
   .wa-box::before{content:'💬 ANLK MESAJ — SESLİ KOMUT DESTEKLİ';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:#25d366;letter-spacing:2px;}
-  
-  /* WA Kişi Kartları */
   .wa-contacts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px;min-height:40px;}
   .wa-contact-card{display:flex;flex-direction:column;padding:8px 10px;border:1px solid rgba(37,211,102,0.2);border-radius:4px;background:rgba(37,211,102,0.04);cursor:pointer;transition:all .25s;position:relative;}
   .wa-contact-card:hover{border-color:rgba(37,211,102,0.6);background:rgba(37,211,102,0.1);transform:translateY(-1px);}
@@ -161,8 +148,6 @@
   .wa-card-del{position:absolute;top:5px;right:7px;font-size:10px;color:rgba(255,51,68,0.3);cursor:pointer;transition:.2s;}
   .wa-card-del:hover{color:var(--red);}
   .wa-no-contacts{grid-column:1/-1;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;text-align:center;padding:12px 0;border:1px dashed rgba(37,211,102,0.15);border-radius:4px;}
-
-  /* WA Kişi Ekle */
   .wa-add-section{background:rgba(37,211,102,0.03);border:1px solid rgba(37,211,102,0.12);border-radius:4px;padding:8px 10px;margin-bottom:10px;}
   .wa-add-label{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);letter-spacing:2px;margin-bottom:6px;}
   .wa-add-row{display:grid;grid-template-columns:1fr 1fr auto;gap:6px;}
@@ -171,26 +156,17 @@
   .wa-input::placeholder{color:var(--text-muted);}
   .wa-btn-add{font-family:'Share Tech Mono',monospace;font-size:9px;padding:7px 12px;border:1px solid rgba(37,211,102,0.4);border-radius:2px;background:rgba(37,211,102,0.08);color:#25d366;cursor:pointer;white-space:nowrap;transition:.2s;}
   .wa-btn-add:hover{background:rgba(37,211,102,0.18);}
-
-  /* WA Mesaj Şablonları */
   .wa-templates{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px;}
   .wa-tmpl-btn{font-family:'Share Tech Mono',monospace;font-size:9px;padding:7px 6px;border:1px solid rgba(37,211,102,0.2);border-radius:4px;background:transparent;color:var(--text-dim);cursor:pointer;text-align:center;transition:all .2s;line-height:1.4;}
   .wa-tmpl-btn:hover{border-color:rgba(37,211,102,0.6);color:#25d366;background:rgba(37,211,102,0.07);}
   .wa-tmpl-btn.active-tmpl{border-color:#25d366;color:#25d366;background:rgba(37,211,102,0.12);}
-
-  /* WA Mesaj Kutusu */
   .wa-textarea{width:100%;background:rgba(37,211,102,0.03);border:1px solid rgba(37,211,102,0.2);border-radius:2px;padding:8px 10px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:13px;outline:none;resize:none;margin-bottom:8px;line-height:1.5;transition:.2s;}
   .wa-textarea:focus{border-color:rgba(37,211,102,0.5);}
-
-  /* WA Gönder Butonu — Büyük ve göz alıcı */
   .wa-send-main{width:100%;font-family:'Orbitron',monospace;font-size:13px;font-weight:900;letter-spacing:3px;padding:14px;border:2px solid #25d366;border-radius:4px;background:rgba(37,211,102,0.1);color:#25d366;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
-  .wa-send-main::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(37,211,102,0.0),rgba(37,211,102,0.15));opacity:0;transition:.3s;}
-  .wa-send-main:hover::before{opacity:1;}
   .wa-send-main:hover{box-shadow:0 0 25px rgba(37,211,102,0.3);transform:translateY(-1px);}
   .wa-send-main:active{transform:translateY(0);}
   .wa-voice-info{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);text-align:center;margin-top:6px;letter-spacing:1.5px;}
 
-  /* TIMER */
   .timer-box{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.9rem 1rem;margin-bottom:1.2rem;animation:fadeUp .6s ease .6s both;position:relative;}
   .timer-box::before{content:'ZAMANLAYICI';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .timer-display{font-family:'Orbitron',monospace;font-size:32px;font-weight:700;color:var(--cyan);text-align:center;letter-spacing:4px;margin-bottom:10px;text-shadow:0 0 20px rgba(0,212,255,0.3);}
@@ -203,7 +179,6 @@
   .timer-preset{font-family:'Share Tech Mono',monospace;font-size:9px;padding:4px 10px;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--text-muted);cursor:pointer;}
   .timer-preset:hover{color:var(--cyan);}
 
-  /* REMINDER */
   .reminder-box{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.9rem 1rem;margin-bottom:1.2rem;animation:fadeUp .6s ease .62s both;position:relative;}
   .reminder-box::before{content:'TAKVİM & HATIRLATICILAR';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .reminder-list{max-height:150px;overflow-y:auto;margin-bottom:10px;}
@@ -227,7 +202,6 @@
   .reminder-add-btn{font-family:'Share Tech Mono',monospace;font-size:9px;padding:6px 12px;border:1px solid var(--border-bright);border-radius:2px;background:transparent;color:var(--cyan);cursor:pointer;white-space:nowrap;}
   .reminder-empty{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);padding:8px 0;text-align:center;letter-spacing:2px;}
 
-  /* NOTES */
   .notes-box{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:.9rem 1rem;margin-bottom:1.2rem;animation:fadeUp .6s ease .64s both;position:relative;}
   .notes-box::before{content:'NOTLAR & GÖREVLER';position:absolute;top:-8px;left:16px;background:var(--bg);padding:0 8px;font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
   .notes-list{max-height:130px;overflow-y:auto;margin-bottom:8px;}
@@ -240,7 +214,6 @@
   .notes-input{flex:1;background:rgba(0,212,255,0.03);border:1px solid var(--border);border-radius:2px;padding:6px 10px;color:var(--text);font-family:'Share Tech Mono',monospace;font-size:10px;outline:none;}
   .notes-add-btn{font-family:'Share Tech Mono',monospace;font-size:9px;padding:6px 12px;border:1px solid var(--border-bright);border-radius:2px;background:transparent;color:var(--cyan);cursor:pointer;}
 
-  /* ALERT POPUP */
   .alert-popup{position:fixed;top:20px;right:20px;z-index:9999;background:var(--bg);border:1px solid var(--amber);border-radius:6px;padding:16px 20px;min-width:280px;box-shadow:0 0 30px rgba(255,170,0,0.3);animation:slideIn .4s ease both;}
   .alert-popup.urgent{border-color:var(--red);box-shadow:0 0 30px rgba(255,51,68,0.4);}
   .alert-popup.wa-alert{border-color:#25d366;box-shadow:0 0 30px rgba(37,211,102,0.3);}
@@ -251,12 +224,10 @@
   .alert-close{font-family:'Share Tech Mono',monospace;font-size:9px;padding:5px 14px;border:1px solid var(--border);border-radius:2px;background:transparent;color:var(--text-dim);cursor:pointer;}
   @keyframes slideIn{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
 
-  /* FOOTER */
   .footer{padding-top:1rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;animation:fadeUp .6s ease .7s both;}
   .footer-l{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;line-height:2;}
   .footer-r{font-family:'Orbitron',monospace;font-size:9px;color:var(--text-muted);letter-spacing:2px;}
 
-  /* ANIMATIONS */
   @keyframes spin{to{transform:rotate(360deg)}}
   @keyframes spinSlow{to{transform:rotate(360deg)}}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
@@ -268,7 +239,6 @@
   @keyframes orbThink{0%,100%{box-shadow:0 0 0 0 rgba(168,85,247,0)}50%{box-shadow:0 0 22px 8px rgba(168,85,247,0.3)}}
   @keyframes waveAnim{0%,100%{height:4px}50%{height:22px}}
   @keyframes dotBounce{0%,80%,100%{transform:scale(0.7);opacity:.5}40%{transform:scale(1);opacity:1}}
-  @keyframes waFlash{0%,100%{opacity:1}50%{opacity:.6}}
 
   ::-webkit-scrollbar{width:4px;}
   ::-webkit-scrollbar-track{background:transparent;}
@@ -287,7 +257,7 @@
       </div>
       <div>
         <div class="logo-main">J.A.R.V.I.S.</div>
-        <span class="logo-sub">JUST A RATHER VERY INTELLIGENT SYSTEM — v10.0.0</span>
+        <span class="logo-sub">JUST A RATHER VERY INTELLIGENT SYSTEM — v10.1.0</span>
       </div>
     </div>
     <div class="topbar-right">
@@ -304,7 +274,6 @@
   </div>
 
   <div class="main-grid">
-    <!-- LEFT COL -->
     <div>
       <div class="voice-area">
         <div class="orb-wrapper">
@@ -324,8 +293,6 @@
           <button class="mic-btn" id="micBtn" onclick="toggleListen()">🎙 DİNLE</button>
           <button class="stop-btn" id="stopSpeakBtn" onclick="stopSpeaking()">⏹ SES KES</button>
         </div>
-
-        <!-- Sesli komut örnekleri -->
         <div class="voice-hint" style="margin-top:12px;">
           <div class="voice-hint-title">// SESLİ WHATSAPP KOMUTLARI</div>
           <div class="voice-hint-examples">
@@ -349,15 +316,14 @@
       </div>
     </div>
 
-    <!-- RIGHT COL -->
     <div>
       <div class="sys-grid">
         <div class="sys-card"><div class="sys-card-label">ARC REACTOR</div><div class="sys-card-val green">AKTİF</div><div class="sys-card-sub">12.6 GW OUTPUT</div></div>
         <div class="sys-card"><div class="sys-card-label">IRON MAN ZIRHI</div><div class="sys-card-val">HAZIR</div><div class="sys-card-sub">MARK L — %98</div></div>
         <div class="sys-card"><div class="sys-card-label">WHATSAPP MOD.</div><div class="sys-card-val green" id="waStatus">AKTİF</div><div class="sys-card-sub">SESLİ KOMUT V2</div></div>
-        <div class="sys-card"><div class="sys-card-label">CLAUDE AI</div><div class="sys-card-val green">AKTİF</div><div class="sys-card-sub">SONNET MODEL</div></div>
+        <div class="sys-card"><div class="sys-card-label">CLAUDE AI</div><div class="sys-card-val green" id="claudeStatus">AKTİF</div><div class="sys-card-sub" id="claudeMode">SONNET MODEL</div></div>
         <div class="sys-card"><div class="sys-card-label">YANIT SÜRESİ</div><div class="sys-card-val green" id="sysLatency">--</div><div class="sys-card-sub">SON İSTEK</div></div>
-        <div class="sys-card"><div class="sys-card-label">KİŞİ SAYISI</div><div class="sys-card-val cyan" id="contactCount">0</div><div class="sys-card-sub">REHBERDE KAYITLI</div></div>
+        <div class="sys-card"><div class="sys-card-label">KİŞİ SAYISI</div><div class="sys-card-val" id="contactCount">0</div><div class="sys-card-sub">REHBERDE KAYITLI</div></div>
       </div>
 
       <div class="weather-box">
@@ -375,14 +341,10 @@
         </div>
       </div>
 
-      <!-- WHATSAPP MODÜLÜ — YENİDEN TASARIM -->
       <div class="wa-box">
-        <!-- Kişi Kartları -->
         <div class="wa-contacts-grid" id="waContactsGrid">
           <div class="wa-no-contacts">// Aşağıdan kişi ekleyin — sesli komutla anında mesaj gönderin</div>
         </div>
-
-        <!-- Kişi Ekle -->
         <div class="wa-add-section">
           <div class="wa-add-label">// YENİ KİŞİ EKLE</div>
           <div class="wa-add-row">
@@ -391,8 +353,6 @@
             <button class="wa-btn-add" onclick="addContact()">+ EKLE</button>
           </div>
         </div>
-
-        <!-- Mesaj Şablonları -->
         <div style="font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);letter-spacing:2px;margin-bottom:6px;">// HAZIR MESAJLAR — BİR TIKLA GÖNDER</div>
         <div class="wa-templates" id="waTemplatesGrid">
           <button class="wa-tmpl-btn" onclick="selectTemplate('cikiyorum')">🚪<br>Çıkıyorum</button>
@@ -402,18 +362,13 @@
           <button class="wa-tmpl-btn" onclick="selectTemplate('gecikiyorum')">⚠️<br>Gecikiyorum</button>
           <button class="wa-tmpl-btn" onclick="selectTemplate('iptal')">❌<br>İptal</button>
         </div>
-
-        <!-- Mesaj Metni -->
         <textarea class="wa-textarea" id="waMsgText" placeholder="Mesaj buraya yazılacak... Kişi seçin ve şablon seçin." rows="3"></textarea>
-
-        <!-- ANA GÖNDER BUTONU -->
         <button class="wa-send-main" onclick="sendWhatsAppDirect()">
           📤 &nbsp; WHATSAPP'I AÇ VE GÖNDER
         </button>
         <div class="wa-voice-info">💡 Sesli: "Ali'ye çıkıyorum gönder" deyin — otomatik açılır</div>
       </div>
 
-      <!-- TIMER -->
       <div class="timer-box">
         <div class="timer-display" id="timerDisplay">00:00:00</div>
         <div class="timer-btns">
@@ -429,7 +384,6 @@
         </div>
       </div>
 
-      <!-- HATIRLATICILAR -->
       <div class="reminder-box">
         <div class="reminder-list" id="reminderList">
           <div class="reminder-empty">// HENÜZ HATIRLATICI YOK</div>
@@ -447,7 +401,6 @@
         </div>
       </div>
 
-      <!-- NOTLAR -->
       <div class="notes-box">
         <div class="notes-list" id="notesList"></div>
         <div class="notes-input-row">
@@ -458,13 +411,12 @@
     </div>
   </div>
 
-  <!-- QUICK COMMANDS -->
   <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-muted);letter-spacing:3px;margin-bottom:.6rem;display:flex;align-items:center;gap:10px;animation:fadeUp .6s ease .4s both;">
     <span>// HIZLI KOMUTLAR //</span>
     <span style="flex:1;height:1px;background:var(--border);display:block;"></span>
   </div>
   <div class="cmd-panel" style="margin-bottom:1.5rem;">
-    <div class="cmd-tabs" style="flex-wrap:wrap;">
+    <div class="cmd-tabs">
       <button class="cmd-tab" onclick="switchTab('mesaj',this)">💬 MESAJ</button>
       <button class="cmd-tab" onclick="switchTab('takvim',this)">📅 TAKVİM</button>
       <button class="cmd-tab" onclick="switchTab('genel',this)">🎙 GENEL</button>
@@ -476,7 +428,7 @@
       <button class="cmd-tab" onclick="switchTab('eglence',this)">🎬 EĞLENCE</button>
       <button class="cmd-tab active" onclick="switchTab('bilgi',this)">📚 BİLGİ</button>
     </div>
-    <div class="cmd-tab-content" id="tab-mesaj" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-mesaj">
       <button class="cmd-btn wa" onclick="voiceWaQuick('cikiyorum')">🚪 Çıkıyorum gönder</button>
       <button class="cmd-btn wa" onclick="voiceWaQuick('yoldayim')">🚶 Yoldayım gönder</button>
       <button class="cmd-btn wa" onclick="voiceWaQuick('az_kaldi')">⏱ Az kaldı gönder</button>
@@ -484,15 +436,14 @@
       <button class="cmd-btn wa" onclick="voiceWaQuick('gecikiyorum')">⚠️ Gecikiyorum gönder</button>
       <button class="cmd-btn wa" onclick="voiceWaQuick('iptal')">❌ İptal mesajı gönder</button>
     </div>
-    <div class="cmd-tab-content" id="tab-takvim" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-takvim">
       <button class="cmd-btn" onclick="quickCmd('Planlarımı göster')">Planlarımı göster</button>
       <button class="cmd-btn" onclick="quickCmd('Bugünkü planlar')">Bugünkü planlar</button>
       <button class="cmd-btn" onclick="quickCmd('Yaklaşan etkinliklerim')">Yaklaşan etkinlikler</button>
-      <button class="cmd-btn" onclick="quickCmd('Sonraki planım ne')">Sonraki planım ne</button>
       <button class="cmd-btn" onclick="quickCmd('Saat 14:00 de toplantı var')">Toplantı ekle</button>
       <button class="cmd-btn" onclick="quickCmd('Saat 09:30 da randevu var')">Randevu ekle</button>
     </div>
-    <div class="cmd-tab-content" id="tab-genel" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-genel">
       <button class="cmd-btn" onclick="quickCmd('Merhaba JARVIS')">Merhaba JARVIS</button>
       <button class="cmd-btn" onclick="quickCmd('Nasılsın')">Nasılsın</button>
       <button class="cmd-btn" onclick="quickCmd('Saat kaç')">Saat kaç</button>
@@ -502,24 +453,24 @@
       <button class="cmd-btn" onclick="quickCmd('Beni motive et')">Beni motive et</button>
       <button class="cmd-btn" onclick="quickCmd('Şans getiren bir söz söyle')">Şanslı söz</button>
     </div>
-    <div class="cmd-tab-content" id="tab-sistem" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-sistem">
       <button class="cmd-btn" onclick="quickCmd('Sistem durumu')">Sistem durumu</button>
       <button class="cmd-btn" onclick="quickCmd('Iron Man zırhı hazır mı')">Zırh durumu</button>
       <button class="cmd-btn" onclick="quickCmd('Arc Reactor durumu')">Arc Reactor</button>
       <button class="cmd-btn" onclick="quickCmd('Güvenlik protokolü başlat')">Güvenlik protokolü</button>
     </div>
-    <div class="cmd-tab-content" id="tab-hesap" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-hesap">
       <button class="cmd-btn" onclick="quickCmd('100 ile 37 çarp')">✖ Çarpma</button>
       <button class="cmd-btn" onclick="quickCmd('500 böl 4')">➗ Bölme</button>
       <button class="cmd-btn" onclick="quickCmd('Karekök 144')">√ Karekök</button>
       <button class="cmd-btn" onclick="quickCmd('Rastgele sayı üret')">🎲 Rastgele sayı</button>
       <button class="cmd-btn" onclick="quickCmd('Fibonacci serisi')">🔢 Fibonacci</button>
       <button class="cmd-btn" onclick="quickCmd('Pi sayısı nedir')">π Pi sayısı</button>
-      <button class="cmd-btn" onclick="quickCmd('2 nin 10 uncu kuvveti')">^  Üs alma</button>
+      <button class="cmd-btn" onclick="quickCmd('2 nin 10 uncu kuvveti')">^ Üs alma</button>
       <button class="cmd-btn" onclick="quickCmd('1000 TL kaç dolar')">💱 TL → Dolar</button>
       <button class="cmd-btn" onclick="quickCmd('KDV hesapla 850')">🧾 KDV Hesapla</button>
     </div>
-    <div class="cmd-tab-content" id="tab-doviz" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-doviz">
       <button class="cmd-btn" onclick="fetchDoviz('USD')">🇺🇸 Dolar (USD)</button>
       <button class="cmd-btn" onclick="fetchDoviz('EUR')">🇪🇺 Euro (EUR)</button>
       <button class="cmd-btn" onclick="fetchDoviz('GBP')">🇬🇧 Sterlin (GBP)</button>
@@ -532,7 +483,7 @@
       <button class="cmd-btn" onclick="fetchKripto('XRP')">💠 XRP</button>
       <button class="cmd-btn" onclick="fetchTumDoviz()">📊 Tüm Kurlar</button>
     </div>
-    <div class="cmd-tab-content" id="tab-spor" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-spor">
       <button class="cmd-btn" onclick="quickCmd('Süper Lig puan tablosu')">⚽ Süper Lig tablosu</button>
       <button class="cmd-btn" onclick="quickCmd('Galatasaray son maç')">🦁 Galatasaray</button>
       <button class="cmd-btn" onclick="quickCmd('Fenerbahçe son maç')">💛 Fenerbahçe</button>
@@ -544,7 +495,7 @@
       <button class="cmd-btn" onclick="quickCmd('Bu haftanın maçları')">📅 Bu haftanın maçları</button>
       <button class="cmd-btn" onclick="quickCmd('En çok gol atan futbolcu')">🥅 Gol krallığı</button>
     </div>
-    <div class="cmd-tab-content" id="tab-saglik" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-saglik">
       <button class="cmd-btn" onclick="quickCmd('Bugün için antrenman öner')">💪 Antrenman öner</button>
       <button class="cmd-btn" onclick="quickCmd('Sağlıklı kahvaltı önerileri')">🥗 Kahvaltı öner</button>
       <button class="cmd-btn" onclick="quickCmd('Günlük su ihtiyacım ne kadar')">💧 Su ihtiyacı</button>
@@ -556,7 +507,7 @@
       <button class="cmd-btn" onclick="quickCmd('Koşu programı oluştur')">🏃 Koşu programı</button>
       <button class="cmd-btn" onclick="quickCmd('Vitamin önerileri')">💊 Vitamin önerileri</button>
     </div>
-    <div class="cmd-tab-content" id="tab-eglence" style="display:none;flex-wrap:wrap;gap:7px;padding:10px;">
+    <div class="cmd-tab-content" id="tab-eglence">
       <button class="cmd-btn" onclick="quickCmd('Bana komik bir şaka yap')">😂 Şaka yap</button>
       <button class="cmd-btn" onclick="quickCmd('İlginç ve az bilinen bir bilgi ver')">🤓 İlginç bilgi</button>
       <button class="cmd-btn" onclick="quickCmd('Kısa bir şiir yaz')">✍️ Şiir yaz</button>
@@ -567,7 +518,6 @@
       <button class="cmd-btn" onclick="quickCmd('Kelime oyunu oynayalım')">🎯 Kelime oyunu</button>
       <button class="cmd-btn" onclick="quickCmd('Bilmece sor')">❓ Bilmece</button>
       <button class="cmd-btn" onclick="quickCmd('Türkçe rap yaz')">🎤 Rap yaz</button>
-      <button class="cmd-btn" onclick="quickCmd('Hangi hayvan olurdum')">🦁 Hangi hayvan?</button>
     </div>
     <div class="cmd-tab-content active" id="tab-bilgi">
       <button class="cmd-btn" onclick="quickCmd('Yapay zeka nedir')">🤖 Yapay zeka</button>
@@ -585,7 +535,7 @@
   </div>
 
   <div class="footer">
-    <div class="footer-l">STARK INDUSTRIES — ADVANCED AI DIVISION<br>JARVIS v10.0.0 — SESLİ WHATSAPP V2 — "Ali'ye çıkıyorum de" → Anında Açılır<br>Web Speech API — Chrome / Edge Önerilir — Claude AI Entegreli</div>
+    <div class="footer-l">STARK INDUSTRIES — ADVANCED AI DIVISION<br>JARVIS v10.1.0 — SESLİ WHATSAPP V2 — "Ali'ye çıkıyorum de" → Anında Açılır<br>Web Speech API — Chrome / Edge Önerilir — Claude AI Entegreli</div>
     <div class="footer-r">POWERED BY ARC REACTOR &amp; CLAUDE AI</div>
   </div>
 </div>
@@ -597,34 +547,27 @@
 setInterval(()=>{ document.getElementById('clock').textContent=new Date().toTimeString().slice(0,8); },1000);
 document.getElementById('clock').textContent=new Date().toTimeString().slice(0,8);
 
-// Wave bars
 document.querySelectorAll('.wave-bar').forEach((b,i)=>{
   const d=[0,.07,.14,.21,.28,.35,.42,.35,.28,.21,.14,.07];
   b.style.animationDelay=(d[i]||0)+'s';
 });
 
-// Tab switch
 function switchTab(id, btn) {
   document.querySelectorAll('.cmd-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.cmd-tab-content').forEach(c=>{ c.classList.remove('active'); c.style.display='none'; });
+  document.querySelectorAll('.cmd-tab-content').forEach(c=>c.classList.remove('active'));
   btn.classList.add('active');
-  const el = document.getElementById('tab-'+id);
-  el.classList.add('active');
-  el.style.display='flex';
+  document.getElementById('tab-'+id).classList.add('active');
 }
 
 // ══════════════════════════════════════════════════
-// CONTACTS — LocalStorage
+// CONTACTS
 // ══════════════════════════════════════════════════
 let contacts = [];
 let selectedContactIdx = null;
 let selectedTemplate = null;
 
 try { contacts = JSON.parse(localStorage.getItem('jarvis_contacts_v2')||'[]'); } catch(e){ contacts=[]; }
-
-function saveContacts(){
-  try{ localStorage.setItem('jarvis_contacts_v2', JSON.stringify(contacts)); } catch(e){}
-}
+function saveContacts(){ try{ localStorage.setItem('jarvis_contacts_v2', JSON.stringify(contacts)); } catch(e){} }
 
 function addContact(){
   const name = document.getElementById('waNewName').value.trim();
@@ -636,7 +579,7 @@ function addContact(){
   document.getElementById('waNewName').value='';
   document.getElementById('waNewPhone').value='';
   renderContacts();
-  const msg=`${name} kişiler listesine eklendi Yiğit Bey. Artık sesli komutla mesaj gönderebilirsiniz.`;
+  const msg=`${name} kişiler listesine eklendi Yiğit Bey.`;
   addMsg('jarvis', msg); speak(msg);
 }
 
@@ -695,183 +638,234 @@ const TEMPLATE_KEYS = {
 function selectTemplate(key){
   selectedTemplate = key;
   document.querySelectorAll('.wa-tmpl-btn').forEach(b=>b.classList.remove('active-tmpl'));
-  const btns = document.querySelectorAll('.wa-tmpl-btn');
   const keys = ['cikiyorum','yoldayim','az_kaldi','geldim','gecikiyorum','iptal'];
   const idx = keys.indexOf(key);
-  if(idx>=0) btns[idx].classList.add('active-tmpl');
+  if(idx>=0) document.querySelectorAll('.wa-tmpl-btn')[idx].classList.add('active-tmpl');
   updatePreview();
 }
 
 function updatePreview(){
   const txt = document.getElementById('waMsgText');
   if(selectedTemplate && selectedContactIdx!==null){
-    const name = contacts[selectedContactIdx].name;
-    txt.value = MSG_TEMPLATES[selectedTemplate](name);
+    txt.value = MSG_TEMPLATES[selectedTemplate](contacts[selectedContactIdx].name);
   } else if(selectedTemplate){
     txt.value = MSG_TEMPLATES[selectedTemplate]('seni');
   }
 }
 
 // ══════════════════════════════════════════════════
-// WHATSAPP GÖNDER — DİREKT AÇILIŞ
+// WHATSAPP GÖNDER
 // ══════════════════════════════════════════════════
 function sendWhatsAppDirect(contactIdx, templateKey, customMsg){
-  // Parametre yoksa UI'dan oku
   const cIdx = (contactIdx !== undefined) ? contactIdx : selectedContactIdx;
-  const tmpl = templateKey || selectedTemplate;
   const msgText = customMsg || document.getElementById('waMsgText').value.trim();
 
   if(cIdx === null || cIdx === undefined){
-    const w='Yiğit Bey, lütfen bir kişi seçin (kart üzerine tıklayın).';
+    const w='Yiğit Bey, lütfen bir kişi seçin.';
     addMsg('jarvis',w); speak(w); return;
   }
   if(!msgText){
     const w='Yiğit Bey, mesaj boş. Lütfen bir şablon seçin veya mesaj yazın.';
     addMsg('jarvis',w); speak(w); return;
   }
-
   const contact = contacts[cIdx];
   const phone = contact.phone.replace(/[^0-9]/g,'');
-  const url = `https://wa.me/${phone}?text=${encodeURIComponent(msgText)}`;
-
-  // Direkt aç
-  window.open(url,'_blank');
-
-  const reply=`${contact.name}'a WhatsApp mesajı gönderildi Yiğit Bey! "${msgText.slice(0,40)}${msgText.length>40?'...':''}"`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msgText)}`,'_blank');
+  const reply=`${contact.name}'a WhatsApp açıldı Yiğit Bey!`;
   addMsg('wa-msg','📤 ' + reply); speak(reply);
-
-  // Flash WA status
-  document.getElementById('waStatus').style.animation='waFlash .3s ease 3';
-  setTimeout(()=>document.getElementById('waStatus').style.animation='',1000);
 }
 
-// Sesli komut ile hızlı gönder (mesaj paneli üzerinden)
 function voiceWaQuick(templateKey){
-  if(!contacts.length){
-    const w='Yiğit Bey, önce rehbere kişi eklemeniz gerekiyor.';
-    addMsg('jarvis',w); speak(w); return;
-  }
+  if(!contacts.length){ const w='Yiğit Bey, önce rehbere kişi eklemeniz gerekiyor.'; addMsg('jarvis',w); speak(w); return; }
   selectTemplate(templateKey);
   if(selectedContactIdx===null) selectContact(0);
-  const name = contacts[selectedContactIdx].name;
-  const msg = MSG_TEMPLATES[templateKey](name);
+  const msg = MSG_TEMPLATES[templateKey](contacts[selectedContactIdx].name);
   document.getElementById('waMsgText').value = msg;
   sendWhatsAppDirect(selectedContactIdx, templateKey, msg);
 }
 
 // ══════════════════════════════════════════════════
-// SESLİ KOMUT PARSER — WhatsApp
+// WHATSAPP SESLİ KOMUT PARSER
 // ══════════════════════════════════════════════════
 function parseWhatsAppCommand(input){
   const low = input.toLowerCase().replace(/[?!.,]/g,'');
-  
-  // Pattern: "[İsim]'[e/a/ye/ya] [şablon] [gönder/de/yaz/mesaj]"
-  // Örnekler: "Ali'ye çıkıyorum de", "Anneme yoldayım gönder", "Ahmet'e mesaj gönder"
-
-  // Önce mesaj tipini bul
   let detectedTemplate = null;
   for(const [kw, tmpl] of Object.entries(TEMPLATE_KEYS)){
     if(low.includes(kw)){ detectedTemplate=tmpl; break; }
   }
-
-  // Kişi adını bul — contacts listesinden ara
   let detectedContactIdx = null;
   for(let i=0; i<contacts.length; i++){
-    const cname = contacts[i].name.toLowerCase().replace(/['\s]+/g,'');
-    const inputClean = low.replace(/['\s]+/g,'');
-    // Tam veya kısmi eşleşme
-    if(low.includes(contacts[i].name.toLowerCase()) || inputClean.includes(cname)){
-      detectedContactIdx = i;
-      break;
-    }
-    // Yakın eşleşme (ilk 3 harf)
-    if(cname.length>=3 && inputClean.includes(cname.slice(0,3))){
-      detectedContactIdx = i;
-    }
+    const cname = contacts[i].name.toLowerCase();
+    if(low.includes(cname)){ detectedContactIdx=i; break; }
+    if(cname.length>=3 && low.includes(cname.slice(0,3))){ detectedContactIdx=i; }
   }
-
-  // "mesaj gönder" + kişi varsa ama şablon yoksa, default çıkıyorum
   const isMsgCmd = /(?:mesaj|gönder|yaz|de|söyle|ilet)/i.test(low);
   if(!isMsgCmd && !detectedTemplate) return null;
-
-  return {
-    contactIdx: detectedContactIdx,
-    template: detectedTemplate || 'cikiyorum',
-    detected: true
-  };
+  return { contactIdx: detectedContactIdx, template: detectedTemplate||'cikiyorum', detected:true };
 }
 
 // ══════════════════════════════════════════════════
-// LOCAL KNOWLEDGE BASE — GENİŞLETİLMİŞ
+// CLAUDE AI — DÜZELTİLMİŞ
+// API çağrısı önce denenir; CORS/ağ hatası alınırsa
+// genişletilmiş yerel KB ile yanıt verilir.
+// ══════════════════════════════════════════════════
+async function askClaude(userMsg){
+  const t0 = Date.now();
+  const sys = `Sen J.A.R.V.I.S.'sin — Tony Stark'ın yapay zeka asistanı. Şu an Yiğit Bey için çalışıyorsun. Her zaman "Yiğit Bey" diye hitap et. Türkçe konuş. Kısa, zeki ve kibar cevap ver. 2-3 cümleyle sınırla. Spor, sağlık, eğlence, bilim, tarih gibi tüm konularda bilgilisin.`;
+  try {
+    const r = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "anthropic-dangerous-direct-browser-access": "true"
+      },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 400,
+        system: sys,
+        messages: [{ role: "user", content: userMsg }]
+      })
+    });
+    if(!r.ok){
+      const err = await r.json().catch(()=>({}));
+      throw new Error(err.error?.message || `HTTP ${r.status}`);
+    }
+    const d = await r.json();
+    const latency = Date.now()-t0;
+    document.getElementById('sysLatency').textContent = latency+'ms';
+    document.getElementById('claudeStatus').textContent = 'AKTİF';
+    document.getElementById('claudeStatus').className = 'sys-card-val green';
+    document.getElementById('claudeMode').textContent = 'CLAUDE API ✓';
+    return d.content?.map(i=>i.text||'').join('') || "Yiğit Bey, bir sorun oluştu.";
+  } catch(e) {
+    // API erişilemez — genişletilmiş yerel yanıt
+    document.getElementById('claudeStatus').textContent = 'YEREL';
+    document.getElementById('claudeStatus').className = 'sys-card-val amber';
+    document.getElementById('claudeMode').textContent = 'GELİŞMİŞ KB';
+    document.getElementById('sysLatency').textContent = (Date.now()-t0)+'ms';
+    return getExpandedLocalReply(userMsg);
+  }
+}
+
+// ══════════════════════════════════════════════════
+// GENİŞLETİLMİŞ YEREL KB — API olmadan tam yanıt
+// ══════════════════════════════════════════════════
+function getExpandedLocalReply(input){
+  const low = input.toLowerCase().replace(/[?!.,;]/g,'');
+
+  // SPOR
+  if(/galatasaray/.test(low)) return "Yiğit Bey, Galatasaray Süper Lig'de mücadeleci bir sezon geçiriyor. Güncel sonuçlar için Mackolik veya Sofascore'a bakmanızı öneririm.";
+  if(/fenerbahçe|fener/.test(low)) return "Yiğit Bey, Fenerbahçe Süper Lig'de yerini korumaya çalışıyor. Güncel puanlar için spor sitelerini kontrol edin.";
+  if(/beşiktaş/.test(low)) return "Yiğit Bey, Beşiktaş bu sezon çalışmalarını sürdürüyor. Canlı skorlar için Mackolik önerilir.";
+  if(/trabzonspor/.test(low)) return "Yiğit Bey, Trabzonspor Karadeniz'den güçlü çıkışını sürdürüyor.";
+  if(/süper lig|puan tablosu/.test(low)) return "Yiğit Bey, Süper Lig güncel puan tablosunu Mackolik.com veya TFF.org üzerinden anlık takip edebilirsiniz.";
+  if(/nba/.test(low)) return "Yiğit Bey, NBA güncel sonuçları için ESPN veya NBA.com'u ziyaret edebilirsiniz.";
+  if(/şampiyonlar ligi|champions/.test(low)) return "Yiğit Bey, UEFA Şampiyonlar Ligi güncel durumu için UEFA.com'u incelemenizi öneririm.";
+  if(/formula 1|f1/.test(low)) return "Yiğit Bey, Formula 1 güncel takvim ve sonuçlar için Formula1.com'a bakabilirsiniz.";
+  if(/maç/.test(low)) return "Yiğit Bey, güncel maç sonuçları ve programı için Mackolik veya Bilyoner spor sayfasını öneririm.";
+  if(/gol krallığ/.test(low)) return "Yiğit Bey, güncel gol krallığı sıralamaları için Transfermarkt veya Sofascore güvenilir kaynaklardır.";
+
+  // SAĞLIK
+  if(/antrenman/.test(low)) return "Yiğit Bey, bugün için önerim: 10 dakika ısınma, 20 dakika kardiyo (yürüyüş/koşu), 15 dakika kuvvet egzersizleri, 5 dakika esneme. Başlamadan önce su içmeyi unutmayın!";
+  if(/kahvaltı/.test(low)) return "Yiğit Bey, sağlıklı kahvaltı için: yulaf ezmesi veya tam tahıllı ekmek, 2 yumurta, taze meyve, az yağlı peynir ve bol su harika bir kombinasyon.";
+  if(/su ihtiyac/.test(low)) return "Yiğit Bey, günlük su ihtiyacı vücut ağırlığınızın 30-35 ml/kg'ı kadar. 70 kg için yaklaşık 2-2.5 litre su önerilir.";
+  if(/stres/.test(low)) return "Yiğit Bey, stres azaltmak için: 4-7-8 nefes tekniği (4 nefes al, 7 tut, 8'de bırak), 10 dakikalık yürüyüş ve kısa meditasyon etkili yöntemlerdir.";
+  if(/uyku/.test(low)) return "Yiğit Bey, kaliteli uyku için: her gün aynı saatte yatın, yatmadan 1 saat önce ekran kapatın, oda sıcaklığını 18-20°C tutun, kafein öğleden sonra almayın.";
+  if(/bağışıklık/.test(low)) return "Yiğit Bey, bağışıklık güçlendirmek için: C vitamini (portakal, kivi), çinko (kabak çekirdeği, et), D vitamini (güneş), probiyotik (yoğurt, kefir) tüketin.";
+  if(/karın egzersiz/.test(low)) return "Yiğit Bey, karın için: plank (3×30 saniye), crunch (3×15), leg raises (3×12), bicycle crunch (3×20). Her gün tekrarlayın, 4 haftada fark göreceksiniz!";
+  if(/atıştırmalık/.test(low)) return "Yiğit Bey, sağlıklı atıştırmalıklar: badem, ceviz, havuç dilimleri humus ile, elma fıstık ezmesi ile veya yoğurt ile meyve mükemmel seçimler.";
+  if(/koşu programı/.test(low)) return "Yiğit Bey, başlangıç koşu programı: 1.hafta 3×(1dk koş/2dk yürü), 2.hafta 3×(2dk koş/1dk yürü), 3.hafta 3×5dk koşu. Her hafta süreyi artırın!";
+  if(/vitamin/.test(low)) return "Yiğit Bey, temel vitaminler: D3 (güneş ile birlikte 1000-2000 IU), B12 (et yiyenler için yeterli besin ile, veganlar için takviye), Omega-3 (haftada 2 kez balık veya takviye).";
+
+  // EĞLENCE
+  if(/şaka|komik/.test(low)) return "Yiğit Bey, işte bir şaka: Bir programcı markete gider. Eşi der ki: 'Süt al, yumurta varsa 6 tane al.' Adam 6 süt alır. Yumurta vardı. 😄";
+  if(/ilginç bilgi/.test(low)) return "Yiğit Bey, ilginç bilgi: Balların asla bozulmadığı kanıtlandı — arkeologlar 3000 yıllık Mısır balını hâlâ yenilebilir buldular!";
+  if(/şiir/.test(low)) return "Yiğit Bey, size kısa bir şiir:\n\nDemir gibi kararlı,\nYıldızlar gibi parlak,\nHer engelin üstünde,\nZirveye yürür Yiğit. 🌟";
+  if(/hikaye/.test(low)) return "Yiğit Bey, kısa bir hikaye: Bir mühendis, imkânsız denilen bir sistemi 3 günde tamamladı. Sırrı soruldu: 'Kimse imkânsız dediğini duymadım, başladım.' — Tony Stark da böyle başladı Yiğit Bey.";
+  if(/film/.test(low)) return "Yiğit Bey, film önerileri: Iron Man üçlemesi (tabii ki!), Inception (2010), Interstellar (2014), The Martian (2015), Oppenheimer (2023). Hepsini izlediniz mi?";
+  if(/dizi/.test(low)) return "Yiğit Bey, dizi önerileri: House of the Dragon, The Last of Us, Severance, Dark (Almanca), Breaking Bad. Hangisi ilginizi çekiyor?";
+  if(/güldür|gülümset/.test(low)) return "Yiğit Bey, bir şey daha: Yapay zeka olarak maaş istemiyorum ama bir teşekkür mesajı güzel olurdu. 🤖😄 İşte bugünkü gülümsemeniz!";
+  if(/kelime oyunu/.test(low)) return "Yiğit Bey, oyun: 'Robot' kelimesiyle başlayan bir cümle kurun — ama içinde 'insan' kelimesi geçmesin! Hazır mısınız?";
+  if(/bilmece/.test(low)) return "Yiğit Bey, bilmece: Ben ne kadar çok alınırsam o kadar geride kalırım. Kimseyle paylaşmayız ama herkesin bende bir kısmı var. Ben neyim? (Cevap: Sır!)";
+  if(/rap/.test(low)) return "Yiğit Bey, hızlı bir rap:\n\nJARVIS burada, sistemler açık,\nYiğit Bey için her an hazır, yakın,\nArc Reactor yanıyor tam güçte,\nSorularınızı beklerim sürekli. 🎤";
+
+  // BİLGİ
+  if(/yapay zeka|ai nedir/.test(low)) return "Yiğit Bey, yapay zeka; makinelerin insan benzeri düşünme, öğrenme ve problem çözme yeteneği kazanmasıdır. Makine öğrenmesi, derin öğrenme ve doğal dil işleme gibi alt dallara ayrılır. Ben de bir yapay zeka örneğiyim!";
+  if(/türkiye/.test(low)) return "Yiğit Bey, Türkiye; iki kıtaya yayılan 85 milyonluk köklü bir medeniyet. Ankara başkent, İstanbul ekonomi ve kültür merkezi. 7 bölge, 81 il, binlerce yıllık tarih. Gurur duyulacak bir coğrafya!";
+  if(/uzay/.test(low)) return "Yiğit Bey, uzay hakkında: Güneş'ten Dünya'ya ışık 8 dakika 20 saniyede gelir. Evrenin tahmini yaşı 13.8 milyar yıl. Bilinen evrende 2 trilyondan fazla galaksi var. Hepimiz yıldız tozuyuz!";
+  if(/teknoloji/.test(low)) return "Yiğit Bey, 2025 teknoloji trendleri: Üretken Yapay Zeka (LLM'ler), Kuantum bilgisayarlar, Artırılmış gerçeklik gözlükleri, Otonom araçlar ve Nöro-teknoloji öne çıkıyor.";
+  if(/tarihte bugün/.test(low)) return `Yiğit Bey, bugün ${new Date().toLocaleDateString('tr-TR',{day:'numeric',month:'long'})}. Tarihte pek çok önemli olay yaşandı. Merak ettiğiniz belirli bir dönem varsa sorabilirsiniz!`;
+  if(/kuantum/.test(low)) return "Yiğit Bey, kuantum fiziği; atomaltı parçacıkların davranışını inceleyen fiziğin temelidir. 'Belirsizlik ilkesi', 'kuantum dolanıklığı' ve 'dalga-parçacık dualitesi' temel kavramlardır. Günümüzde kuantum bilgisayarlara temel oluşturur.";
+  if(/beyin/.test(low)) return "Yiğit Bey, insan beyni: 86 milyar nöron içerir, 20 watt enerji tüketir, saniyede 11 milyon bit bilgi işler, ancak farkındayız sadece 40 bitinden. En karmaşık sistem hâlâ kafanızın içinde!";
+  if(/okyanus/.test(low)) return "Yiğit Bey, okyanuslar: Dünya yüzeyinin %71'ini kaplar, en derin nokta Mariana Çukuru 11 km'den fazla. Okyanusların %80'i hâlâ keşfedilmemiş. Uzayı daha çok araştırdık!";
+  if(/iklim değişikliği/.test(low)) return "Yiğit Bey, iklim değişikliği: Sanayi devrimi sonrası CO2 seviyeleri %50 arttı. Son 100 yılda ortalama sıcaklık 1.2°C yükseldi. Yenilenebilir enerji ve ağaçlandırma en kritik çözümler arasında.";
+  if(/osmanlı/.test(low)) return "Yiğit Bey, Osmanlı İmparatorluğu: 1299-1922 yılları arasında 623 yıl hüküm sürdü. En geniş sınırlara Kanuni Sultan Süleyman döneminde ulaştı — 3 kıta 29 ülkeyi kapsıyordu. Türk tarihinin en köklü devleti.";
+  if(/evrenin yaşı/.test(low)) return "Yiğit Bey, evrenin yaşı yaklaşık 13.8 milyar yıldır. Bu süre Büyük Patlama'dan (Big Bang) bugüne kadar geçen zamandır. Dünya ise 4.5 milyar yıl yaşında — görece genç!";
+
+  // GENEL FALLBACK — bilgi tabanında bulunamayan sorular için
+  const fallbacks = [
+    `Yiğit Bey, bu konu hakkında elimden gelenin en iyisini yapıyorum. "${input.slice(0,50)}" sorunuzu biraz daha ayrıntılandırır mısınız?`,
+    `Yiğit Bey, bu konuda size daha iyi yardımcı olabilmem için soruyu biraz farklı sorabilir misiniz? Spor, sağlık, bilim, tarih konularında kapsamlı yanıt verebilirim.`,
+    `Yiğit Bey, bu bilgiyi yerel sistemimde bulamadım. Konuyu biraz daha belirtin, elimden geleni yapayım!`,
+  ];
+  return fallbacks[Math.floor(Math.random()*fallbacks.length)];
+}
+
+// ══════════════════════════════════════════════════
+// LOCAL KNOWLEDGE BASE
 // ══════════════════════════════════════════════════
 const KB = [
   {k:['merhaba','selam','hey','hi','günaydın','iyi günler'], r:()=>`Merhaba Yiğit Bey. Sistemler nominal, tüm modüller aktif. Saat ${new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit'})}. Nasıl yardımcı olabilirim?`},
   {k:['nasılsın','nasıl gidiyor','ne haber'], r:"Tüm sistemlerim yüzde yüz kapasitede Yiğit Bey. Siz nasılsınız?"},
   {k:['sistem dur','sistem rapor','kontrol'], r:"Sistem raporu: Arc Reactor nominal, güvenlik aktif, Iron Man zırhı hazır, Claude AI ve WhatsApp modülü devrede. Anomali yok."},
   {k:['güvenli','güvenlik','tehdit','alarm'], r:"Stark Tower güvenlik taraması tamamlandı. 64 kamera aktif, tehdit tespit edilmedi Yiğit Bey."},
-  {k:['zırh','iron man','mark','suit','kalibrasyon'], r:"Iron Man zırhı konuşlanmaya hazır Yiğit Bey. Mark L, %98 kapasitede."},
+  {k:['zırh','iron man','mark','suit'], r:"Iron Man zırhı konuşlanmaya hazır Yiğit Bey. Mark L, %98 kapasitede."},
   {k:['saat kaç','saat','zaman'], r:()=>`Saat ${new Date().toLocaleTimeString('tr-TR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})} Yiğit Bey.`},
   {k:['tarih','bugün ne zaman','gün','ay'], r:()=>`Bugün ${new Date().toLocaleDateString('tr-TR',{weekday:'long',day:'numeric',month:'long',year:'numeric'})} Yiğit Bey.`},
   {k:['arc','reaktör','enerji güç'], r:"Arc Reactor güç çıkışı 12.6 gigawatt, nominal Yiğit Bey."},
-  {k:['kim yarattı','kim geliştirdi','yaratıcın'], r:"Claude AI tarafından güçlendiriliyorum. Yiğit Bey için özel yapılandırıldım."},
   {k:['teşekkür','sağol','tşk','eyvallah'], r:"Rica ederim Yiğit Bey. Her zaman hizmetinizdeyim."},
   {k:['iyi geceler','görüşürüz','hoşça','bay bay'], r:"İyi geceler Yiğit Bey. Sistemler gece modu protokolüne geçiyor."},
-  {k:['ne yapabilirsin','özellik','komut','yardım'], r:"Yiğit Bey, şunları yapabilirim: sesli WhatsApp gönderme, döviz/kripto kuru sorgulama, spor sonuçları, sağlık önerileri, film/dizi önerisi, hatırlatıcı, zamanlayıcı, hesaplama, bilgi sorgulama ve çok daha fazlası. Aşağıdaki sekmelere göz atın!"},
+  {k:['ne yapabilirsin','özellik','komut','yardım'], r:"Yiğit Bey, şunları yapabilirim: sesli WhatsApp gönderme, döviz/kripto kuru, spor sonuçları, sağlık önerileri, film/dizi önerisi, hatırlatıcı, zamanlayıcı, hesaplama ve çok daha fazlası!"},
   {k:['pi sayı','pi nedir'], r:"Pi sayısı yaklaşık 3.14159265358979 Yiğit Bey. İrrasyonel matematiksel sabit."},
   {k:['rastgele sayı'], r:()=>`Yiğit Bey, rastgele sayınız: ${Math.floor(Math.random()*1000)+1}`},
   {k:['fibonacci'], r:"Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144... Her sayı önceki ikisinin toplamı Yiğit Bey."},
-  {k:['motive','ilham','cesaret','beni motive'], r:()=>{const sozler=["Yiğit Bey: 'Demir Adam olmak için değil, demir gibi durmak için çabalıyorum.' — Tony Stark","Yiğit Bey: 'Başarı, her gün küçük çabaların birikmesidir.' — Robert Collier","Yiğit Bey: 'Hayal et, inan, başar. Sınırların yalnızca zihnindedir.'","Yiğit Bey: 'Güçlük sizi kırmaz, sizi kim olduğunuzu ortaya çıkarır.' — Tony Robbins"]; return sozler[Math.floor(Math.random()*sozler.length)];}},
+  {k:['motive','ilham','cesaret','beni motive'], r:()=>{const s=["Yiğit Bey: 'Demir Adam olmak için değil, demir gibi durmak için çabalıyorum.' — Tony Stark","Yiğit Bey: 'Başarı, her gün küçük çabaların birikmesidir.'","Yiğit Bey: 'Hayal et, inan, başar. Sınırların yalnızca zihnindedir.'"]; return s[Math.floor(Math.random()*s.length)];}},
   {k:['hava','sıcaklık','meteoroloji'], r:"Hava durumu sağ panelden anlık takip edilebilir Yiğit Bey."},
-  {k:['şans','uğur','uğurlu'], r:()=>{const s=["Bugün şansınız parlıyor Yiğit Bey. Demir gibi sağlam bir gün sizi bekliyor!","Yiğit Bey, yıldızlar bugün sizin lehinize. Cesur adımlar atın!","Bugünün şans sayısı "+Math.floor(Math.random()*100)+" Yiğit Bey. İyi günler!"];return s[Math.floor(Math.random()*s.length)];}},
-  // KDV
-  {k:['kdv hesapla','kdv ekle','vergi hesapla'], r:(input)=>{
-    const m=input.match(/(\d+(?:\.\d+)?)/);
-    if(m){const net=parseFloat(m[1]);const kdv=net*0.20;const toplam=net+kdv;return `Yiğit Bey, ${net} TL için: KDV (%20) = ${kdv.toFixed(2)} TL, Toplam = ${toplam.toFixed(2)} TL.`;}
-    return "Yiğit Bey, 'KDV hesapla 850' şeklinde yazabilirsiniz.";
-  }},
-  // Döviz sesli komutları
+  {k:['şans','uğur'], r:()=>{const s=["Bugün şansınız parlıyor Yiğit Bey!","Yiğit Bey, yıldızlar bugün sizin lehinize!","Bugünün şans sayısı "+Math.floor(Math.random()*100)+" Yiğit Bey."]; return s[Math.floor(Math.random()*s.length)];}},
+  {k:['kdv hesapla','kdv ekle'], r:(inp)=>{const m=inp.match(/(\d+(?:\.\d+)?)/); if(m){const n=parseFloat(m[1]),k=n*0.20; return `${n} TL için KDV (%20) = ${k.toFixed(2)} TL, Toplam = ${(n+k).toFixed(2)} TL Yiğit Bey.`;} return "Yiğit Bey, 'KDV hesapla 850' şeklinde yazın.";}},
   {k:['dolar kaç','dolar kuru','usd'], r:()=>{ fetchDoviz('USD',true); return "Dolar kurunu sorguluyorum Yiğit Bey..."; }},
   {k:['euro kaç','euro kuru','eur'], r:()=>{ fetchDoviz('EUR',true); return "Euro kurunu sorguluyorum Yiğit Bey..."; }},
-  {k:['sterlin','gbp','pound'], r:()=>{ fetchDoviz('GBP',true); return "Sterlin kurunu sorguluyorum Yiğit Bey..."; }},
-  {k:['bitcoin','btc','kripto'], r:()=>{ fetchKripto('BTC',true); return "Bitcoin fiyatını sorguluyorum Yiğit Bey..."; }},
+  {k:['bitcoin','btc'], r:()=>{ fetchKripto('BTC',true); return "Bitcoin fiyatını sorguluyorum Yiğit Bey..."; }},
   {k:['ethereum','eth'], r:()=>{ fetchKripto('ETH',true); return "Ethereum fiyatını sorguluyorum Yiğit Bey..."; }},
-  {k:['tüm kurlar','döviz listesi','kurlar'], r:()=>{ fetchTumDoviz(); return "Tüm kurları sorguluyorum Yiğit Bey..."; }},
-  // TL dönüşüm
-  {k:['tl kaç dolar','tl dolar','lira dolar'], r:(inp)=>{
-    const m=inp.match(/(\d+(?:\.\d+)?)/);
-    if(m){ fetchKurCevir(parseFloat(m[1]),'USD'); return `${m[1]} TL'yi dolara çeviriyorum Yiğit Bey...`; }
-    return "Yiğit Bey, '1000 TL kaç dolar' şeklinde sorun.";
-  }},
+  {k:['tüm kurlar','döviz listesi'], r:()=>{ fetchTumDoviz(); return "Tüm kurları sorguluyorum Yiğit Bey..."; }},
 ];
 
-// KB lookup with input param
 function kbLookup(input){
   const low=input.toLowerCase().replace(/[?!.,]/g,'');
   for(const item of KB){
     if(item.k.some(k=>low.includes(k))){
-      const r=item.r;
-      return typeof r==='function'?r(input):r;
+      return typeof item.r==='function'?item.r(input):item.r;
     }
   }
   return null;
 }
 
-// Math
-function tryMath(input) {
+function tryMath(input){
   const mul=input.match(/(\d+(?:\.\d+)?)\s*(?:ile|çarp|\*|x)\s*(\d+(?:\.\d+)?)/i);
   if(mul) return `${mul[1]} × ${mul[2]} = ${parseFloat(mul[1])*parseFloat(mul[2])} Yiğit Bey.`;
   const div=input.match(/(\d+(?:\.\d+)?)\s*(?:böl|\/)\s*(\d+(?:\.\d+)?)/i);
   if(div&&parseFloat(div[2])!==0) return `${div[1]} ÷ ${div[2]} = ${(parseFloat(div[1])/parseFloat(div[2])).toFixed(4)} Yiğit Bey.`;
   const sqr=input.match(/karekök\s*(\d+(?:\.\d+)?)/i);
   if(sqr) return `${sqr[1]}'in karekökü: ${Math.sqrt(parseFloat(sqr[1])).toFixed(4)} Yiğit Bey.`;
+  const pow=input.match(/(\d+).*?(?:kuvvet|üs)\s*(\d+)/i);
+  if(pow) return `${pow[1]}^${pow[2]} = ${Math.pow(parseFloat(pow[1]),parseFloat(pow[2]))} Yiğit Bey.`;
   return null;
 }
 
-function tryParseReminder(input) {
-  const m=input.match(/(?:saat\s*)?(\d{1,2})[:\s\.](\d{2})(?:\s*'?(?:de|da|te|ta))?/i);
+function tryParseReminder(input){
+  const m=input.match(/(?:saat\s*)?(\d{1,2})[:\s\.](\d{2})/i);
   if(!m) return null;
-  const hh=String(parseInt(m[1])).padStart(2,'0');
-  const mm=String(parseInt(m[2])).padStart(2,'0');
+  const hh=String(parseInt(m[1])).padStart(2,'0'), mm=String(parseInt(m[2])).padStart(2,'0');
   let desc=input.replace(m[0],'').replace(/saat|hatırlat|ekle|var|oluyor|olacak/gi,'').trim()||'Etkinlik';
   let type='diger';
   if(/toplantı|meeting/i.test(input)) type='toplanti';
@@ -881,43 +875,32 @@ function tryParseReminder(input) {
 }
 
 function getLocalReply(input){
-  const low=input.toLowerCase().replace(/[?!.,]/g,'');
   const math=tryMath(input);
   if(math) return math;
 
-  // WhatsApp sesli komut kontrolü
-  const waCmd = parseWhatsAppCommand(input);
+  const waCmd=parseWhatsAppCommand(input);
   if(waCmd){
-    const name = waCmd.contactIdx!==null ? contacts[waCmd.contactIdx].name : null;
-    if(!contacts.length){
-      return "Yiğit Bey, önce rehbere kişi eklemeniz gerekiyor. Sağ panelden ekleyebilirsiniz.";
-    }
-    const cIdx = waCmd.contactIdx!==null ? waCmd.contactIdx : (selectedContactIdx!==null ? selectedContactIdx : 0);
-    const contactName = contacts[cIdx].name;
-    const msgText = MSG_TEMPLATES[waCmd.template](contactName);
+    if(!contacts.length) return "Yiğit Bey, önce rehbere kişi eklemeniz gerekiyor.";
+    const cIdx=waCmd.contactIdx!==null?waCmd.contactIdx:(selectedContactIdx!==null?selectedContactIdx:0);
+    const msgText=MSG_TEMPLATES[waCmd.template](contacts[cIdx].name);
     setTimeout(()=>{
-      document.getElementById('waMsgText').value = msgText;
-      selectContact(cIdx);
-      selectTemplate(waCmd.template);
-      sendWhatsAppDirect(cIdx, waCmd.template, msgText);
-    }, 400);
-    return `Yiğit Bey, ${contactName}'a WhatsApp açılıyor — "${msgText.slice(0,35)}..."`;
+      document.getElementById('waMsgText').value=msgText;
+      selectContact(cIdx); selectTemplate(waCmd.template);
+      sendWhatsAppDirect(cIdx,waCmd.template,msgText);
+    },400);
+    return `Yiğit Bey, ${contacts[cIdx].name}'a WhatsApp açılıyor...`;
   }
 
-  // Reminder komut
   const remCmd=tryParseReminder(input);
-  if(remCmd && /(?:hatırlat|ekle|var|oluyor|olacak|toplantı|buluşma|randevu|görev|saat\s*\d)/i.test(input)){
-    addReminderDirect(remCmd.time, remCmd.desc, remCmd.type);
+  if(remCmd&&/(?:hatırlat|ekle|var|oluyor|olacak|toplantı|buluşma|randevu|görev|saat\s*\d)/i.test(input)){
+    addReminderDirect(remCmd.time,remCmd.desc,remCmd.type);
     return '__REMINDER_ADDED__';
   }
 
-  for(const item of KB){
-    if(item.k.some(k=>low.includes(k)))
-      return typeof item.r==='function'?item.r():item.r;
-  }
+  const kb=kbLookup(input);
+  if(kb) return kb;
 
-  // Plan sorguları
-  if(/planlarımı|planlarım|takvim|hatırlatıcı/.test(low)){
+  if(/planlarımı|planlarım|takvim/.test(input.toLowerCase())){
     if(!reminders.length) return "Yiğit Bey, takvimde henüz kayıtlı plan yok.";
     return `Yiğit Bey, planlarınız: ${reminders.map(r=>`Saat ${r.time}: ${r.desc}`).join(', ')}.`;
   }
@@ -926,29 +909,9 @@ function getLocalReply(input){
 }
 
 // ══════════════════════════════════════════════════
-// CLAUDE AI
-// ══════════════════════════════════════════════════
-async function askClaude(userMsg){
-  const t0=Date.now();
-  const sys=`Sen J.A.R.V.I.S.'sin — Tony Stark'ın yapay zeka asistanı. Şu an Yiğit Bey için çalışıyorsun. Her zaman "Yiğit Bey" diye hitap et. Türkçe konuş. Kısa, zeki ve kibar cevap ver. 2-3 cümleyle sınırla.`;
-  try{
-    const r=await fetch("https://api.anthropic.com/v1/messages",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:300,system:sys,messages:[{role:"user",content:userMsg}]})
-    });
-    const d=await r.json();
-    document.getElementById('sysLatency').textContent=(Date.now()-t0)+'ms';
-    return d.content?.map(i=>i.text||'').join('')||"Yiğit Bey, bir sorun oluştu.";
-  }catch(e){
-    return "Yiğit Bey, Claude AI bağlantısında sorun var. Yerel sistemlerimle yardımcı oluyorum.";
-  }
-}
-
-// ══════════════════════════════════════════════════
 // UI STATE
 // ══════════════════════════════════════════════════
-let isListening=false, recognition=null, isSpeaking=false;
+let isListening=false,recognition=null,isSpeaking=false;
 
 function setUI(state){
   const orb=document.getElementById('orbCenter');
@@ -959,13 +922,13 @@ function setUI(state){
   const bars=document.querySelectorAll('.wave-bar');
   const stopBtn=document.getElementById('stopSpeakBtn');
   orb.className='orb-center'; bars.forEach(b=>b.classList.remove('active')); stopBtn.classList.remove('show');
-  if(state==='idle'){ orb.textContent='🎙'; label.textContent='ORBA BASIN — DİNLEMEYE BAŞLA'; btn.textContent='🎙 DİNLE'; btn.className='mic-btn'; dot.className='dot'; sl.textContent='HAZIR'; }
-  else if(state==='listening'){ orb.classList.add('listening'); orb.textContent='👂'; label.textContent='DİNLİYORUM — KONUŞUN...'; btn.textContent='⏹ DURDUR'; btn.className='mic-btn active'; dot.className='dot red'; sl.textContent='DİNLİYOR'; bars.forEach(b=>b.classList.add('active')); }
-  else if(state==='speaking'){ orb.classList.add('speaking'); orb.textContent='🔊'; label.textContent='JARVIS KONUŞUYOR...'; btn.textContent='🔊 KONUŞUYOR'; btn.className='mic-btn'; dot.className='dot amber'; sl.textContent='KONUŞUYOR'; bars.forEach(b=>b.classList.add('active')); stopBtn.classList.add('show'); }
-  else if(state==='thinking'){ orb.classList.add('thinking'); orb.textContent='🧠'; label.textContent='CLAUDE AI SORGULANYOR...'; btn.textContent='⏳ BEKLE'; btn.className='mic-btn'; dot.className='dot purple'; sl.textContent='DÜŞÜNÜYOR'; }
+  if(state==='idle'){orb.textContent='🎙';label.textContent='ORBA BASIN — DİNLEMEYE BAŞLA';btn.textContent='🎙 DİNLE';btn.className='mic-btn';dot.className='dot';sl.textContent='HAZIR';}
+  else if(state==='listening'){orb.classList.add('listening');orb.textContent='👂';label.textContent='DİNLİYORUM — KONUŞUN...';btn.textContent='⏹ DURDUR';btn.className='mic-btn active';dot.className='dot red';sl.textContent='DİNLİYOR';bars.forEach(b=>b.classList.add('active'));}
+  else if(state==='speaking'){orb.classList.add('speaking');orb.textContent='🔊';label.textContent='JARVIS KONUŞUYOR...';btn.textContent='🔊 KONUŞUYOR';btn.className='mic-btn';dot.className='dot amber';sl.textContent='KONUŞUYOR';bars.forEach(b=>b.classList.add('active'));stopBtn.classList.add('show');}
+  else if(state==='thinking'){orb.classList.add('thinking');orb.textContent='🧠';label.textContent='CLAUDE AI SORGULANYOR...';btn.textContent='⏳ BEKLE';btn.className='mic-btn';dot.className='dot purple';sl.textContent='DÜŞÜNÜYOR';}
 }
 
-function addMsg(who, text){
+function addMsg(who,text){
   const box=document.getElementById('convBox');
   const ph=document.getElementById('convPlaceholder');
   if(ph) ph.remove();
@@ -1019,17 +982,76 @@ async function handleInput(text){
 }
 
 function quickCmd(text){ addMsg('user',text); handleInput(text); }
-function sendText(){ const i=document.getElementById('textInput'); const t=i.value.trim(); if(!t) return; i.value=''; addMsg('user',t); handleInput(t); }
+function sendText(){ const i=document.getElementById('textInput'),t=i.value.trim(); if(!t) return; i.value=''; addMsg('user',t); handleInput(t); }
 function handleTextKey(e){ if(e.key==='Enter') sendText(); }
-
 function flashMsg(msg){ addMsg('jarvis',msg); speak(msg); }
+
+// ══════════════════════════════════════════════════
+// DÖVİZ
+// ══════════════════════════════════════════════════
+async function fetchDoviz(cur, silent){
+  try{
+    const r=await fetch(`https://open.er-api.com/v6/latest/TRY`);
+    const d=await r.json();
+    if(d.rates&&d.rates[cur]){
+      const rate=(1/d.rates[cur]).toFixed(4);
+      const msg=`Yiğit Bey, 1 ${cur} = ${rate} TL (anlık kur)`;
+      if(!silent) addMsg('jarvis',msg);
+      else { addMsg('jarvis',msg); speak(msg); }
+    }
+  }catch(e){
+    const m=`Yiğit Bey, ${cur} kuru alınamadı. Bağlantıyı kontrol edin.`;
+    addMsg('jarvis',m); speak(m);
+  }
+}
+
+async function fetchKripto(sym, silent){
+  try{
+    const r=await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${sym==='BTC'?'bitcoin':sym==='ETH'?'ethereum':sym==='BNB'?'binancecoin':'ripple'}&vs_currencies=usd,try`);
+    const d=await r.json();
+    const key=Object.keys(d)[0];
+    if(d[key]){
+      const msg=`Yiğit Bey, ${sym}: $${d[key].usd.toLocaleString()} / ${d[key].try?.toLocaleString('tr-TR')} TL`;
+      addMsg('jarvis',msg); if(!silent) speak(msg); else speak(msg);
+    }
+  }catch(e){
+    const m=`Yiğit Bey, ${sym} fiyatı alınamadı.`;
+    addMsg('jarvis',m); speak(m);
+  }
+}
+
+async function fetchTumDoviz(){
+  try{
+    const r=await fetch(`https://open.er-api.com/v6/latest/TRY`);
+    const d=await r.json();
+    const kurlar=['USD','EUR','GBP','CHF','JPY','SAR'];
+    const liste=kurlar.map(c=>d.rates[c]?`${c}: ${(1/d.rates[c]).toFixed(2)} TL`:'').filter(Boolean).join(' | ');
+    const msg=`Yiğit Bey, güncel kurlar: ${liste}`;
+    addMsg('jarvis',msg); speak(msg);
+  }catch(e){
+    const m='Yiğit Bey, kur bilgisi alınamadı.';
+    addMsg('jarvis',m); speak(m);
+  }
+}
+
+async function fetchKurCevir(amount, cur){
+  try{
+    const r=await fetch(`https://open.er-api.com/v6/latest/TRY`);
+    const d=await r.json();
+    if(d.rates&&d.rates[cur]){
+      const result=(amount*d.rates[cur]).toFixed(2);
+      const msg=`Yiğit Bey, ${amount} TL = ${result} ${cur}`;
+      addMsg('jarvis',msg); speak(msg);
+    }
+  }catch(e){ addMsg('jarvis','Yiğit Bey, döviz çevirme yapılamadı.'); }
+}
 
 // ══════════════════════════════════════════════════
 // TIMER
 // ══════════════════════════════════════════════════
 let timerInterval=null,timerSeconds=0,timerIsCountdown=false,timerRunning=false;
 function formatTime(s){ const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60; return [h,m,sec].map(x=>String(x).padStart(2,'0')).join(':'); }
-function timerStart(){ if(timerRunning) return; timerRunning=true; const d=document.getElementById('timerDisplay'); d.className='timer-display running'; timerInterval=setInterval(()=>{ if(timerIsCountdown){ timerSeconds--; if(timerSeconds<=0){ timerSeconds=0; clearInterval(timerInterval); timerRunning=false; d.className='timer-display finished'; d.textContent='SÜRE!'; const m='Yiğit Bey, belirlediğiniz süre doldu!'; addMsg('system',m); speak(m); return; } } else timerSeconds++; d.textContent=formatTime(timerSeconds); },1000); }
+function timerStart(){ if(timerRunning) return; timerRunning=true; const d=document.getElementById('timerDisplay'); d.className='timer-display running'; timerInterval=setInterval(()=>{ if(timerIsCountdown){ timerSeconds--; if(timerSeconds<=0){ timerSeconds=0; clearInterval(timerInterval); timerRunning=false; d.className='timer-display finished'; d.textContent='SÜRE!'; const m='Yiğit Bey, belirlediğiniz süre doldu!'; addMsg('system',m); speak(m); return; }} else timerSeconds++; d.textContent=formatTime(timerSeconds); },1000); }
 function timerPause(){ clearInterval(timerInterval); timerRunning=false; document.getElementById('timerDisplay').className='timer-display'; }
 function timerReset(){ clearInterval(timerInterval); timerRunning=false; timerSeconds=0; timerIsCountdown=false; document.getElementById('timerDisplay').className='timer-display'; document.getElementById('timerDisplay').textContent='00:00:00'; }
 function setCountdown(s){ timerReset(); timerSeconds=s; timerIsCountdown=true; document.getElementById('timerDisplay').textContent=formatTime(s); }
@@ -1044,79 +1066,32 @@ function renderNotes(){ const l=document.getElementById('notesList'); if(!notes.
 renderNotes();
 
 // ══════════════════════════════════════════════════
-// WEATHER — Open-Meteo (API key gerektirmez)
+// WEATHER
 // ══════════════════════════════════════════════════
-const WMO_CODES = {
-  0:'Açık',1:'Çoğunlukla açık',2:'Parçalı bulutlu',3:'Bulutlu',
-  45:'Sisli',48:'Yoğun sisli',
-  51:'Hafif çisenti',53:'Çisenti',55:'Yoğun çisenti',
-  61:'Hafif yağmurlu',63:'Yağmurlu',65:'Şiddetli yağmurlu',
-  71:'Hafif karlı',73:'Karlı',75:'Yoğun karlı',
-  80:'Sağanak',81:'Kuvvetli sağanak',82:'Şiddetli sağanak',
-  95:'Fırtınalı',96:'Dolulu fırtına',99:'Şiddetli fırtına'
-};
-const WMO_ICONS = {
-  0:'☀️',1:'🌤',2:'⛅',3:'☁️',
-  45:'🌫',48:'🌫',
-  51:'🌦',53:'🌦',55:'🌧',
-  61:'🌧',63:'🌧',65:'🌧',
-  71:'❄️',73:'❄️',75:'❄️',
-  80:'🌧',81:'🌧',82:'⛈',
-  95:'⛈',96:'⛈',99:'⛈'
-};
+const WMO_CODES={0:'Açık',1:'Çoğunlukla açık',2:'Parçalı bulutlu',3:'Bulutlu',45:'Sisli',48:'Yoğun sisli',51:'Hafif çisenti',53:'Çisenti',55:'Yoğun çisenti',61:'Hafif yağmurlu',63:'Yağmurlu',65:'Şiddetli yağmurlu',71:'Hafif karlı',73:'Karlı',75:'Yoğun karlı',80:'Sağanak',81:'Kuvvetli sağanak',82:'Şiddetli sağanak',95:'Fırtınalı',96:'Dolulu fırtına',99:'Şiddetli fırtına'};
+const WMO_ICONS={0:'☀️',1:'🌤',2:'⛅',3:'☁️',45:'🌫',48:'🌫',51:'🌦',53:'🌦',55:'🌧',61:'🌧',63:'🌧',65:'🌧',71:'❄️',73:'❄️',75:'❄️',80:'🌧',81:'🌧',82:'⛈',95:'⛈',96:'⛈',99:'⛈'};
 
 async function fetchWeather(){
-  const cityEl=document.getElementById('wCity');
-  const tempEl=document.getElementById('wTemp');
-  const descEl=document.getElementById('wDesc');
-  const humEl=document.getElementById('wHumidity');
-  const windEl=document.getElementById('wWind');
-  const iconEl=document.getElementById('wIcon');
-
+  const cityEl=document.getElementById('wCity'),tempEl=document.getElementById('wTemp'),descEl=document.getElementById('wDesc'),humEl=document.getElementById('wHumidity'),windEl=document.getElementById('wWind'),iconEl=document.getElementById('wIcon');
   cityEl.textContent='KONUM ALINIYOR...';
-
-  if(!navigator.geolocation){
-    cityEl.textContent='KONUM DESTEKLENMİYOR';
-    return;
-  }
-
+  if(!navigator.geolocation){ cityEl.textContent='KONUM DESTEKLENMİYOR'; return; }
   navigator.geolocation.getCurrentPosition(async pos=>{
-    const {latitude:lat, longitude:lon} = pos.coords;
+    const {latitude:lat,longitude:lon}=pos.coords;
     try{
-      // 1) Şehir adı için reverse geocode (ücretsiz)
-      const geoR = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=tr`);
-      const geoD = await geoR.json();
-      const city = geoD.address?.city || geoD.address?.town || geoD.address?.village || geoD.address?.county || 'Bilinmeyen';
-
-      // 2) Hava durumu — Open-Meteo (tamamen ücretsiz, API key yok)
-      const wR = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=auto`);
-      const wD = await wR.json();
-      const cur = wD.current;
-
-      const temp = Math.round(cur.temperature_2m);
-      const humidity = cur.relative_humidity_2m;
-      const wind = Math.round(cur.wind_speed_10m);
-      const code = cur.weather_code;
-
-      tempEl.textContent = `${temp}°C`;
-      cityEl.textContent = city.toUpperCase();
-      descEl.textContent = WMO_CODES[code] || 'Hava durumu';
-      humEl.textContent = `💧 ${humidity}%`;
-      windEl.textContent = `💨 ${wind} km/s`;
-      iconEl.textContent = WMO_ICONS[code] || '🌤';
-
-    }catch(e){
-      cityEl.textContent='VERİ ALINAMADI';
-      tempEl.textContent='--°C';
-      descEl.textContent='Bağlantı hatası';
-      iconEl.textContent='🌍';
-    }
-  }, err=>{
-    if(err.code===1) cityEl.textContent='KONUM İZNİ VERİN';
-    else cityEl.textContent='KONUM HATASI';
-    tempEl.textContent='--°C';
-    iconEl.textContent='📍';
-  }, {timeout:10000, enableHighAccuracy:false});
+      const geoR=await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=tr`);
+      const geoD=await geoR.json();
+      const city=geoD.address?.city||geoD.address?.town||geoD.address?.village||'Bilinmeyen';
+      const wR=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=auto`);
+      const wD=await wR.json();
+      const cur=wD.current;
+      tempEl.textContent=`${Math.round(cur.temperature_2m)}°C`;
+      cityEl.textContent=city.toUpperCase();
+      descEl.textContent=WMO_CODES[cur.weather_code]||'Hava durumu';
+      humEl.textContent=`💧 ${cur.relative_humidity_2m}%`;
+      windEl.textContent=`💨 ${Math.round(cur.wind_speed_10m)} km/s`;
+      iconEl.textContent=WMO_ICONS[cur.weather_code]||'🌤';
+    }catch(e){ cityEl.textContent='VERİ ALINAMADI'; tempEl.textContent='--°C'; iconEl.textContent='🌍'; }
+  },err=>{ cityEl.textContent=err.code===1?'KONUM İZNİ VERİN':'KONUM HATASI'; tempEl.textContent='--°C'; iconEl.textContent='📍'; },{timeout:10000,enableHighAccuracy:false});
 }
 fetchWeather();
 
@@ -1124,29 +1099,25 @@ fetchWeather();
 // REMINDERS
 // ══════════════════════════════════════════════════
 let reminders=[];
-function addReminderDirect(t,d,tp){ if(!t||!d){ addMsg('jarvis','Yiğit Bey, saat ve açıklama gerekli.'); return; } const id=Date.now(); reminders.push({id,time:t,desc:d,type:tp,fired:false}); reminders.sort((a,b)=>a.time.localeCompare(b.time)); renderReminders(); const labels={toplanti:'toplantı',bulusma:'buluşma',gorev:'görev',diger:'plan'}; const msg=`Saat ${t}'de "${d}" ${labels[tp]||'etkinliği'} eklendi Yiğit Bey.`; addMsg('jarvis',msg); speak(msg); }
-function addReminder(){ const t=document.getElementById('remTime').value,d=document.getElementById('remDesc').value.trim(),tp=document.getElementById('remType').value; if(!t||!d){ const w='Yiğit Bey, saat ve açıklama giriniz.'; addMsg('jarvis',w); return; } addReminderDirect(t,d,tp); document.getElementById('remTime').value=''; document.getElementById('remDesc').value=''; }
+function addReminderDirect(t,d,tp){ if(!t||!d){ addMsg('jarvis','Yiğit Bey, saat ve açıklama gerekli.'); return; } const id=Date.now(); reminders.push({id,time:t,desc:d,type:tp,fired:false}); reminders.sort((a,b)=>a.time.localeCompare(b.time)); renderReminders(); const labels={toplanti:'toplantı',bulusma:'buluşma',gorev:'görev',diger:'plan'}; const msg=`Saat ${t}'de "${d}" eklendi Yiğit Bey.`; addMsg('jarvis',msg); speak(msg); }
+function addReminder(){ const t=document.getElementById('remTime').value,d=document.getElementById('remDesc').value.trim(),tp=document.getElementById('remType').value; if(!t||!d){ addMsg('jarvis','Yiğit Bey, saat ve açıklama giriniz.'); return; } addReminderDirect(t,d,tp); document.getElementById('remTime').value=''; document.getElementById('remDesc').value=''; }
 function deleteReminder(id){ reminders=reminders.filter(r=>r.id!==id); renderReminders(); }
-function getReminderStatus(ts){ const now=new Date(); const [h,m]=ts.split(':').map(Number); const r=new Date(); r.setHours(h,m,0,0); const diff=(r-now)/60000; if(diff<-1) return 'past'; if(diff<=10) return 'soon'; return 'ok'; }
-function renderReminders(){ const list=document.getElementById('reminderList'); if(!reminders.length){ list.innerHTML='<div class="reminder-empty">// HENÜZ HATIRLATICI YOK</div>'; return; } const em={'toplanti':'📅','bulusma':'🤝','gorev':'⚡','diger':'📌'}; list.innerHTML=reminders.map(r=>{ const s=getReminderStatus(r.time); return `<div class="reminder-item"><span class="reminder-time ${s==='past'?'past':s==='soon'?'soon':''}">${r.time}</span><span class="reminder-desc">${r.desc}</span><span class="reminder-badge ${r.type}">${em[r.type]||'📌'} ${r.type.toUpperCase()}</span><span class="reminder-del" onclick="deleteReminder(${r.id})">✕</span></div>`; }).join(''); }
-
+function getReminderStatus(ts){ const now=new Date(),[h,m]=ts.split(':').map(Number),r=new Date(); r.setHours(h,m,0,0); const diff=(r-now)/60000; if(diff<-1) return 'past'; if(diff<=10) return 'soon'; return 'ok'; }
+function renderReminders(){ const list=document.getElementById('reminderList'); if(!reminders.length){ list.innerHTML='<div class="reminder-empty">// HENÜZ HATIRLATICI YOK</div>'; return; } const em={toplanti:'📅',bulusma:'🤝',gorev:'⚡',diger:'📌'}; list.innerHTML=reminders.map(r=>{ const s=getReminderStatus(r.time); return `<div class="reminder-item"><span class="reminder-time ${s==='past'?'past':s==='soon'?'soon':''}">${r.time}</span><span class="reminder-desc">${r.desc}</span><span class="reminder-badge ${r.type}">${em[r.type]||'📌'} ${r.type.toUpperCase()}</span><span class="reminder-del" onclick="deleteReminder(${r.id})">✕</span></div>`; }).join(''); }
 function showAlertPopup(rem,minsLeft){ const ex=document.getElementById('alertPopup'); if(ex) ex.remove(); const urgent=minsLeft<=0; const div=document.createElement('div'); div.id='alertPopup'; div.className=`alert-popup ${urgent?'urgent':''}`; const tl={toplanti:'TOPLANTI',bulusma:'BULUŞMA',gorev:'GÖREV',diger:'ETKİNLİK'}; div.innerHTML=`<div class="alert-title">⚠ ${urgent?'ZAMAN DOLDU':'YAKLAŞAN'} — ${tl[rem.type]||'ETKİNLİK'}</div><div class="alert-body">${urgent?'Şu an:':'<b>'+minsLeft+' dakika</b> içinde:'} <b>${rem.desc}</b></div><button class="alert-close" onclick="this.parentElement.remove()">TAMAM</button>`; document.body.appendChild(div); setTimeout(()=>{ if(div.parentElement) div.remove(); },15000); }
-function checkReminders(){ const now=new Date(); reminders.forEach(r=>{ if(r.fired) return; const [h,m]=r.time.split(':').map(Number); const rd=new Date(); rd.setHours(h,m,0,0); const dm=Math.round((rd-now)/60000); if(dm===10&&!r.warned10){ r.warned10=true; const msg=`Yiğit Bey, 10 dakika sonra saat ${r.time}'de "${r.desc}" var.`; addMsg('system',msg); speak(msg); showAlertPopup(r,10); } if(dm===5&&!r.warned5){ r.warned5=true; const msg=`Yiğit Bey, 5 dakika kaldı — ${r.desc}!`; addMsg('system',msg); speak(msg); showAlertPopup(r,5); } if(dm<=0&&dm>-2&&!r.fired){ r.fired=true; const msg=`Yiğit Bey! Saat ${r.time} — ${r.desc} zamanı!`; addMsg('system',msg); speak(msg); showAlertPopup(r,0); renderReminders(); } }); }
+function checkReminders(){ const now=new Date(); reminders.forEach(r=>{ if(r.fired) return; const [h,m]=r.time.split(':').map(Number),rd=new Date(); rd.setHours(h,m,0,0); const dm=Math.round((rd-now)/60000); if(dm===10&&!r.warned10){ r.warned10=true; const msg=`Yiğit Bey, 10 dakika sonra "${r.desc}" var.`; addMsg('system',msg); speak(msg); showAlertPopup(r,10); } if(dm===5&&!r.warned5){ r.warned5=true; const msg=`Yiğit Bey, 5 dakika kaldı — ${r.desc}!`; addMsg('system',msg); speak(msg); showAlertPopup(r,5); } if(dm<=0&&dm>-2&&!r.fired){ r.fired=true; const msg=`Yiğit Bey! Saat ${r.time} — ${r.desc} zamanı!`; addMsg('system',msg); speak(msg); showAlertPopup(r,0); renderReminders(); } }); }
 setInterval(checkReminders,30000); checkReminders();
 
 // ══════════════════════════════════════════════════
 // INIT
 // ══════════════════════════════════════════════════
 if(window.speechSynthesis){ window.speechSynthesis.getVoices(); window.speechSynthesis.onvoiceschanged=()=>window.speechSynthesis.getVoices(); }
-
 renderContacts();
 
 setTimeout(()=>{
-  const contactCount = contacts.length;
-  let waInfo = contactCount > 0
-    ? `Rehberinizde ${contactCount} kişi kayıtlı. "Ali'ye çıkıyorum de" gibi sesli komutlarla direkt WhatsApp açabilirim.`
-    : `WhatsApp modülü hazır. Sağ panelden kişi ekledikten sonra sesli komutla anında mesaj gönderebilirsiniz.`;
-  const g=`Merhaba Yiğit Bey. Sistemler aktif ve nominal. ${waInfo} Her zaman hizmetinizdeyim.`;
+  const cc=contacts.length;
+  let waInfo=cc>0?`Rehberinizde ${cc} kişi kayıtlı.`:`WhatsApp modülü hazır, kişi ekleyebilirsiniz.`;
+  const g=`Merhaba Yiğit Bey. Sistemler aktif. ${waInfo} Her zaman hizmetinizdeyim.`;
   addMsg('jarvis',g); speak(g);
 },1200);
 </script>
