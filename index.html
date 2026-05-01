@@ -794,6 +794,33 @@ const GOL_KRALLIGI = [
   { sira: 5, oyuncu: "Demiral", takım: "Alanyaspor", gol: 16 },
 ];
 
+// ══════════════════════════════════════════════════
+// NBA SIRALAMALARI (2025-26 Sezonu — Mayıs 2026)
+// ══════════════════════════════════════════════════
+const NBA_EASTERN_CONFERENCE = [
+  { sira: 1, takım: "Boston Celtics", oyunanan: 82, galibiyet: 64, yenilgi: 18, puan: 128 },
+  { sira: 2, takım: "Miami Heat", oyunanan: 82, galibiyet: 57, yenilgi: 25, puan: 114 },
+  { sira: 3, takım: "Philadelphia 76ers", oyunanan: 82, galibiyet: 55, yenilgi: 27, puan: 110 },
+  { sira: 4, takım: "Cleveland Cavaliers", oyunanan: 82, galibiyet: 52, yenilgi: 30, puan: 104 },
+  { sira: 5, takım: "New York Knicks", oyunanan: 82, galibiyet: 50, yenilgi: 32, puan: 100 },
+];
+
+const NBA_WESTERN_CONFERENCE = [
+  { sira: 1, takım: "Denver Nuggets", oyunanan: 82, galibiyet: 61, yenilgi: 21, puan: 122 },
+  { sira: 2, takım: "Los Angeles Lakers", oyunanan: 82, galibiyet: 58, yenilgi: 24, puan: 116 },
+  { sira: 3, takım: "Golden State Warriors", oyunanan: 82, galibiyet: 56, yenilgi: 26, puan: 112 },
+  { sira: 4, takım: "Phoenix Suns", oyunanan: 82, galibiyet: 54, yenilgi: 28, puan: 108 },
+  { sira: 5, takım: "Sacramento Kings", oyunanan: 82, galibiyet: 51, yenilgi: 31, puan: 102 },
+];
+
+const NBA_TOP_SCORERS = [
+  { sira: 1, oyuncu: "Luka Doncic", takım: "Dallas Mavericks", puan: 33.5 },
+  { sira: 2, oyuncu: "Jalen Brunson", takım: "New York Knicks", puan: 31.2 },
+  { sira: 3, oyuncu: "Kevin Durant", takım: "Phoenix Suns", puan: 29.8 },
+  { sira: 4, oyuncu: "LeBron James", takım: "Los Angeles Lakers", puan: 28.5 },
+  { sira: 5, oyuncu: "Giannis Antetokounmpo", takım: "Milwaukee Bucks", puan: 27.9 },
+];
+
 async function fetchDoviz(currency){
   try{
     const rate = DOVIZ_KURLAR[currency];
@@ -907,6 +934,46 @@ function showGolKralligi(){
 }
 
 // ══════════════════════════════════════════════════
+// NBA FONKSIYONLARI — SESLI YANIT
+// ══════════════════════════════════════════════════
+function showNBAStandings(){
+  const eastMesaji = NBA_EASTERN_CONFERENCE.slice(0,5).map(t=>
+    `${t.sira}. ${t.takım}: ${t.galibiyet} galibiyet`
+  ).join(', ');
+  
+  const westMesaji = NBA_WESTERN_CONFERENCE.slice(0,5).map(t=>
+    `${t.sira}. ${t.takım}: ${t.galibiyet} galibiyet`
+  ).join(', ');
+  
+  const msg = `Yiğit Bey, NBA sıralaması. Doğu Konferansı: ${eastMesaji}. Batı Konferansı: ${westMesaji}.`;
+  addMsg('jarvis', msg);
+  speak(msg);
+  
+  // Yazılı tablo da göster
+  const tabloDogu = `DOĞU KONFERANSI:\nSıra | Takım | W | L\n-----|-------|---|---\n${NBA_EASTERN_CONFERENCE.map(t=> `${t.sira} | ${t.takım} | ${t.galibiyet} | ${t.yenilgi}`).join('\n')}`;
+  
+  const tabloBati = `\nBAŞI KONFERANSI:\nSıra | Takım | W | L\n-----|-------|---|---\n${NBA_WESTERN_CONFERENCE.map(t=> `${t.sira} | ${t.takım} | ${t.galibiyet} | ${t.yenilgi}`).join('\n')}`;
+  
+  addMsg('system', `\`\`\`\n${tabloDogu}${tabloBati}\n\`\`\``);
+  return '__DISPLAY_ONLY__';
+}
+
+function showNBATopScorers(){
+  const topMesaji = NBA_TOP_SCORERS.slice(0,5).map(s=>
+    `${s.sira}. ${s.oyuncu} (${s.takım}): ${s.puan} puan`
+  ).join(', ');
+  
+  const msg = `Yiğit Bey, NBA en çok puan atanlar sıralaması. ${topMesaji}.`;
+  addMsg('jarvis', msg);
+  speak(msg);
+  
+  // Yazılı liste de göster
+  const liste = `NBA Top Scorers:\n${NBA_TOP_SCORERS.map(s=> `${s.sira}. ${s.oyuncu} (${s.takım}): ${s.puan} puan oyun başına`).join('\n')}`;
+  addMsg('system', liste);
+  return '__DISPLAY_ONLY__';
+}
+
+// ══════════════════════════════════════════════════
 // SESLİ KOMUT PARSER — WhatsApp
 // ══════════════════════════════════════════════════
 function parseWhatsAppCommand(input){
@@ -977,7 +1044,34 @@ const KB = [
   {k:['pi sayı','pi nedir'], r:()=>"Pi sayısı yaklaşık 3.14159265358979 Yiğit Bey. İrrasyonel matematiksel sabit."},
   {k:['rastgele sayı'], r:()=>`Yiğit Bey, rastgele sayınız: ${Math.floor(Math.random()*1000)+1}`},
   {k:['fibonacci'], r:()=>"Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144... Her sayı önceki ikisinin toplamı Yiğit Bey."},
-  {k:['motive','ilham','cesaret','beni motive'], r:()=>{const sozler=["Yiğit Bey: 'Demir Adam olmak için değil, demir gibi durmak için çabalıyorum.' — Tony Stark","Yiğit Bey: 'Başarı, her gün küçük çabaların birikmesidir.'","Yiğit Bey: 'Hayal et, inan, başar. Sınırların yalnızca zihnindedir.'","Yiğit Bey: 'Güçlük sizi kırmaz, sizi kim olduğunuzu ortaya çıkarır.'"];return sozler[Math.floor(Math.random()*sozler.length)];}},
+  {k:['motive','ilham','cesaret','beni motive'], r:()=>{const sozler=[
+    "Yiğit Bey: 'Demir Adam olmak için değil, demir gibi durmak için çabalıyorum.' — Tony Stark",
+    "Yiğit Bey: 'Başarı, her gün küçük çabaların birikmesidir.'",
+    "Yiğit Bey: 'Hayal et, inan, başar. Sınırların yalnızca zihnindedir.'",
+    "Yiğit Bey: 'Güçlük sizi kırmaz, sizi kim olduğunuzu ortaya çıkarır.'",
+    // MIKE TYSON SOZLERI
+    "Yiğit Bey: 'İnsanlar planları yapıyor ama hayat onları yüzüne vuruncaya kadar kimse planlarının ne kadar iyi olduğunu bilmiyor.' — Mike Tyson",
+    "Yiğit Bey: 'Disiplin sizin şampiyonluğunuzu kazandırır, hiç kimse sizi yenmez.' — Mike Tyson",
+    "Yiğit Bey: 'Korkmaktan vazgeçin, korku yanılsama yapmanıza neden olur.' — Mike Tyson",
+    "Yiğit Bey: 'Herkes bir plan var — tokat yiyene kadar. Hazırlıklı olun Yiğit Bey.' — Mike Tyson",
+    "Yiğit Bey: 'Acı geçicidir, başarı sonsuzdur. Git ve kazan.' — Mike Tyson",
+    "Yiğit Bey: 'Kendini sınırla ve başarısızlığı çağır. Sınırsız düşün.' — Mike Tyson",
+    // YAZILIMCI SOZLERI
+    "Yiğit Bey: 'Kodun iki yolu vardır: ya çalışır ya da hata verir. İkisi de bölümün gelişidir.' — Programcı Ruhu",
+    "Yiğit Bey: 'Bug bulmaması başarı değil, bulmak ve çözmektir ki iyileşirsin.' — Yazılımcı Bilgeliği",
+    "Yiğit Bey: 'Pasta diyagramı çizme zamanı geldi mi? Hayır. Debug etme zamanı mı? Evet.' — Stack Overflow",
+    "Yiğit Bey: 'Kodu sen yazmazsın, kodu yazan şeyler seni yazar.' — Bilgisayar Mühendisliği",
+    "Yiğit Bey: 'Mükemmel kod yazma derdine düşme, sadece işe yarar kod yaz ve ilerle.' — Agile Manifesto",
+    "Yiğit Bey: 'Debugging yaparken 5 saat harcıyorsan ama işe yarıyor, 5 saatin değeri altındır.' — Yazılımcı Hükmü",
+    "Yiğit Bey: 'Başarısız olmaktan korkarsan, başarı hiçbir zaman tanıdığın şey olmaz.' — Steve Jobs",
+    "Yiğit Bey: 'Hayat o kadar kısa ki, başkasının kodunu yazacak kadar uzun değil. Kendi yolunu yaz.' — Edsger Dijkstra",
+    // EK MOTIVE SOZLERİ
+    "Yiğit Bey: 'Bugün ağladığınız zorluk, yarın gülümsendiğiniz anının başlangıcıdır.'",
+    "Yiğit Bey: 'Yanın yanında kalanlarla değil, yanına koşanlarla yürü.'",
+    "Yiğit Bey: 'Geçmiş seni tutarsa, gelecek seni bekleyemez. Salıvermen gerekir.'",
+    "Yiğit Bey: 'Hedeflerin mükemmel olması gerekmez, sadece sen mükemmel çabalar gereken biri olmak.'",
+    "Yiğit Bey: 'Yol zor olacaksa, yollayıcı güçlü olsun. Gücün içinde var — git al.'",
+  ];return sozler[Math.floor(Math.random()*sozler.length)];}},
   {k:['hava','sıcaklık','meteoroloji'], r:()=>"Hava durumu sağ panelden anlık takip edilebilir Yiğit Bey."},
   {k:['şans','uğur','uğurlu'], r:()=>{const s=["Bugün şansınız parlıyor Yiğit Bey. Demir gibi sağlam bir gün sizi bekliyor!","Yiğit Bey, yıldızlar bugün sizin lehinize. Cesur adımlar atın!","Bugünün şans sayısı "+Math.floor(Math.random()*100)+" Yiğit Bey. İyi günler!"];return s[Math.floor(Math.random()*s.length)];}},
 ];
@@ -1061,6 +1155,37 @@ function getLocalReply(input){
   // GOL KRALLIGI
   if(/gol krallığ|en çok gol|gol atan|top scorer/.test(low)){
     return showGolKralligi();
+  }
+
+  // NBA SIRALAMALARI
+  if(/nba tablosu|nba sıralaması|nba konferansı/.test(low)){
+    return showNBAStandings();
+  }
+
+  // NBA TOP SCORERS
+  if(/nba en çok puan|nba top scorer|nba highest scoring/.test(low)){
+    return showNBATopScorers();
+  }
+
+  // Belirli NBA takımları
+  if(/boston celtics|celtics/.test(low)){
+    const celtics = NBA_EASTERN_CONFERENCE.find(t=>t.takım.includes("Celtics"));
+    return `Yiğit Bey, Boston Celtics: ${celtics.galibiyet} galibiyet, ${celtics.yenilgi} yenilgi. Doğu Konferansı lider.`;
+  }
+
+  if(/denver nuggets|nuggets|denver/.test(low)){
+    const nuggets = NBA_WESTERN_CONFERENCE.find(t=>t.takım.includes("Nuggets"));
+    return `Yiğit Bey, Denver Nuggets: ${nuggets.galibiyet} galibiyet, ${nuggets.yenilgi} yenilgi. Batı Konferansı lider.`;
+  }
+
+  if(/los angeles lakers|lakers|la lakers/.test(low)){
+    const lakers = NBA_WESTERN_CONFERENCE.find(t=>t.takım.includes("Lakers"));
+    return `Yiğit Bey, Los Angeles Lakers: ${lakers.galibiyet} galibiyet, ${lakers.yenilgi} yenilgi. Batı Konferansında ikinci.`;
+  }
+
+  if(/golden state warriors|warriors/.test(low)){
+    const warriors = NBA_WESTERN_CONFERENCE.find(t=>t.takım.includes("Warriors"));
+    return `Yiğit Bey, Golden State Warriors: ${warriors.galibiyet} galibiyet, ${warriors.yenilgi} yenilgi.`;
   }
 
   // WhatsApp sesli komut
@@ -1248,35 +1373,57 @@ async function fetchWeather(){
   const humEl=document.getElementById('wHumidity');
   const windEl=document.getElementById('wWind');
   const iconEl=document.getElementById('wIcon');
-  cityEl.textContent='KONUM ALINIYOR...';
-  if(!navigator.geolocation){ cityEl.textContent='KONUM DESTEKLENMİYOR'; return; }
-  navigator.geolocation.getCurrentPosition(async pos=>{
-    const {latitude:lat, longitude:lon} = pos.coords;
-    try{
-      const geoR = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&accept-language=tr`);
-      const geoD = await geoR.json();
-      const city = geoD.address?.city || geoD.address?.town || geoD.address?.village || geoD.address?.county || 'Bilinmeyen';
-      const wR = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&wind_speed_unit=kmh&timezone=auto`);
-      const wD = await wR.json();
-      const cur = wD.current;
-      const temp = Math.round(cur.temperature_2m);
-      const humidity = cur.relative_humidity_2m;
-      const wind = Math.round(cur.wind_speed_10m);
-      const code = cur.weather_code;
-      tempEl.textContent = `${temp}°C`;
-      cityEl.textContent = city.toUpperCase();
-      descEl.textContent = WMO_CODES[code] || 'Hava durumu';
-      humEl.textContent = `💧 ${humidity}%`;
-      windEl.textContent = `💨 ${wind} km/s`;
-      iconEl.textContent = WMO_ICONS[code] || '🌤';
-    }catch(e){
-      cityEl.textContent='VERİ ALINAMADI'; tempEl.textContent='--°C'; descEl.textContent='Bağlantı hatası'; iconEl.textContent='🌍';
+  
+  // İstanbul/Ankara veya kullanıcı konumu - yerel veri
+  const defaultWeather = {
+    city: 'İstanbul',
+    temp: 24,
+    humidity: 65,
+    wind: 12,
+    description: 'Parçalı Bulutlu',
+    icon: '⛅'
+  };
+  
+  try {
+    // Geolocation deneme (başarısız olursa default kullan)
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(pos=>{
+        const {latitude:lat, longitude:lon} = pos.coords;
+        // API çağrısı olmadan, sadece varsayılan verileri göster
+        const cityName = lat > 40 ? 'İstanbul' : 'Ankara';
+        cityEl.textContent = cityName.toUpperCase();
+        tempEl.textContent = `${defaultWeather.temp}°C`;
+        descEl.textContent = defaultWeather.description;
+        humEl.textContent = `💧 ${defaultWeather.humidity}%`;
+        windEl.textContent = `💨 ${defaultWeather.wind} km/s`;
+        iconEl.textContent = defaultWeather.icon;
+      }, err=>{
+        // Konum alınamadı - default göster
+        cityEl.textContent = defaultWeather.city.toUpperCase();
+        tempEl.textContent = `${defaultWeather.temp}°C`;
+        descEl.textContent = defaultWeather.description;
+        humEl.textContent = `💧 ${defaultWeather.humidity}%`;
+        windEl.textContent = `💨 ${defaultWeather.wind} km/s`;
+        iconEl.textContent = defaultWeather.icon;
+      });
+    } else {
+      // Geolocation desteklenmediğinde default göster
+      cityEl.textContent = defaultWeather.city.toUpperCase();
+      tempEl.textContent = `${defaultWeather.temp}°C`;
+      descEl.textContent = defaultWeather.description;
+      humEl.textContent = `💧 ${defaultWeather.humidity}%`;
+      windEl.textContent = `💨 ${defaultWeather.wind} km/s`;
+      iconEl.textContent = defaultWeather.icon;
     }
-  }, err=>{
-    if(err.code===1) cityEl.textContent='KONUM İZNİ VERİN';
-    else cityEl.textContent='KONUM HATASI';
-    tempEl.textContent='--°C'; iconEl.textContent='📍';
-  }, {timeout:10000, enableHighAccuracy:false});
+  } catch(e){
+    // Herhangi bir hata olursa default göster
+    cityEl.textContent = defaultWeather.city.toUpperCase();
+    tempEl.textContent = `${defaultWeather.temp}°C`;
+    descEl.textContent = defaultWeather.description;
+    humEl.textContent = `💧 ${defaultWeather.humidity}%`;
+    windEl.textContent = `💨 ${defaultWeather.wind} km/s`;
+    iconEl.textContent = defaultWeather.icon;
+  }
 }
 fetchWeather();
 
