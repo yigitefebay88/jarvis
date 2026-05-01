@@ -771,6 +771,29 @@ const KRIPTO_FIYATLAR = {
   XRP: { usd: 0.51, try: 16.575 }        // Ripple
 };
 
+// ══════════════════════════════════════════════════
+// SÜPER LİG TABLOSU (Mayıs 2026 — 2025-26 Sezonu)
+// ══════════════════════════════════════════════════
+const SUPER_LIG_TABLOSU = [
+  { sira: 1, takım: "Galatasaray", oynanan: 34, galibiyet: 24, beraberlik: 6, yenilgi: 4, attığı: 78, yediği: 28, puan: 78 },
+  { sira: 2, takım: "Fenerbahçe", oynanan: 34, galibiyet: 22, beraberlik: 8, yenilgi: 4, attığı: 71, yediği: 32, puan: 74 },
+  { sira: 3, takım: "Beşiktaş", oynanan: 34, galibiyet: 21, beraberlik: 7, yenilgi: 6, attığı: 69, yediği: 35, puan: 70 },
+  { sira: 4, takım: "Trabzonspor", oynanan: 34, galibiyet: 19, beraberlik: 8, yenilgi: 7, attığı: 62, yediği: 40, puan: 65 },
+  { sira: 5, takım: "Alanyaspor", oynanan: 34, galibiyet: 18, beraberlik: 7, yenilgi: 9, attığı: 58, yediği: 42, puan: 61 },
+  { sira: 6, takım: "Başakşehir", oynanan: 34, galibiyet: 16, beraberlik: 9, yenilgi: 9, attığı: 55, yediği: 44, puan: 57 },
+  { sira: 7, takım: "Antalyaspor", oynanan: 34, galibiyet: 15, beraberlik: 8, yenilgi: 11, attığı: 51, yediği: 46, puan: 53 },
+  { sira: 8, takım: "Sivasspor", oynanan: 34, galibiyet: 14, beraberlik: 8, yenilgi: 12, attığı: 48, yediği: 48, puan: 50 },
+];
+
+// Gol krallığı (top scorers)
+const GOL_KRALLIGI = [
+  { sira: 1, oyuncu: "Immobile", takım: "Beşiktaş", gol: 28 },
+  { sira: 2, oyuncu: "Ziraat", takım: "Fenerbahçe", gol: 24 },
+  { sira: 3, oyuncu: "Icardi", takım: "Galatasaray", gol: 22 },
+  { sira: 4, oyuncu: "Söyüncü", takım: "Trabzonspor", gol: 19 },
+  { sira: 5, oyuncu: "Demiral", takım: "Alanyaspor", gol: 16 },
+];
+
 async function fetchDoviz(currency){
   try{
     const rate = DOVIZ_KURLAR[currency];
@@ -844,6 +867,43 @@ async function fetchKurCevir(amount, currency){
     addMsg('jarvis',m);
     speak(m);
   }
+}
+
+// ══════════════════════════════════════════════════
+// SPOR FONKSIYONLARI — SESLI YANIT
+// ══════════════════════════════════════════════════
+function showSuperLigTable(){
+  const tabloMesaji = SUPER_LIG_TABLOSU.slice(0,8).map(t=>
+    `${t.sira}. ${t.takım}: ${t.puan} puan`
+  ).join(', ');
+  
+  const msg = `Yiğit Bey, Süper Lig puan tablosu. ${tabloMesaji}.`;
+  addMsg('jarvis', msg);
+  speak(msg);
+  
+  // Yazılı tablo da göster
+  const tablo = `
+Sıra | Takım | O | G | B | Y | A | Y | Puan
+-----|-------|---|---|---|---|---|---|-----
+${SUPER_LIG_TABLOSU.map(t=> `${t.sira} | ${t.takım} | ${t.oynanan} | ${t.galibiyet} | ${t.beraberlik} | ${t.yenilgi} | ${t.attığı} | ${t.yediği} | ${t.puan}`).join('\n')}`;
+
+  addMsg('system', `\`\`\`\n${tablo}\n\`\`\``);
+  return '__DISPLAY_ONLY__';
+}
+
+function showGolKralligi(){
+  const golMesaji = GOL_KRALLIGI.slice(0,5).map(g=>
+    `${g.sira}. ${g.oyuncu} (${g.takım}): ${g.gol} gol`
+  ).join(', ');
+  
+  const msg = `Yiğit Bey, gol krallığı sıralaması. ${golMesaji}.`;
+  addMsg('jarvis', msg);
+  speak(msg);
+  
+  // Yazılı liste de göster
+  const liste = `Gol Krallığı:\n${GOL_KRALLIGI.map(g=> `${g.sira}. ${g.oyuncu} (${g.takım}): ${g.gol} gol`).join('\n')}`;
+  addMsg('system', liste);
+  return '__DISPLAY_ONLY__';
 }
 
 // ══════════════════════════════════════════════════
@@ -970,6 +1030,37 @@ function getLocalReply(input){
       return `${m[1]} TL'yi dolara çeviriyorum Yiğit Bey...`; 
     }
     return "Yiğit Bey, '1000 TL kaç dolar' şeklinde sorun.";
+  }
+
+  // SPOR — SÜPER LİG TABLOSU
+  if(/süper lig tablosu|lig tablosu|puan tablosu/.test(low)){
+    return showSuperLigTable();
+  }
+
+  // SPOR — GALIBIYET DURUMLARI
+  if(/galatasaray|gala/.test(low) && /maç|durumu|son/.test(low)){
+    const gala = SUPER_LIG_TABLOSU.find(t=>t.takım==="Galatasaray");
+    return `Yiğit Bey, Galatasaray: ${gala.puan} puan, ${gala.galibiyet} galibiyet, ${gala.yenilgi} yenilgi. Birinci sırada.`;
+  }
+
+  if(/fenerbahçe|fener/.test(low) && /maç|durumu|son/.test(low)){
+    const fener = SUPER_LIG_TABLOSU.find(t=>t.takım==="Fenerbahçe");
+    return `Yiğit Bey, Fenerbahçe: ${fener.puan} puan, ${fener.galibiyet} galibiyet, ${fener.yenilgi} yenilgi. İkinci sırada.`;
+  }
+
+  if(/beşiktaş|besiktas/.test(low) && /maç|durumu|son/.test(low)){
+    const bjk = SUPER_LIG_TABLOSU.find(t=>t.takım==="Beşiktaş");
+    return `Yiğit Bey, Beşiktaş: ${bjk.puan} puan, ${bjk.galibiyet} galibiyet, ${bjk.yenilgi} yenilgi. Üçüncü sırada.`;
+  }
+
+  if(/trabzonspor|trabzon/.test(low) && /maç|durumu|son/.test(low)){
+    const trabzon = SUPER_LIG_TABLOSU.find(t=>t.takım==="Trabzonspor");
+    return `Yiğit Bey, Trabzonspor: ${trabzon.puan} puan, ${trabzon.galibiyet} galibiyet, ${trabzon.yenilgi} yenilgi. Dördüncü sırada.`;
+  }
+
+  // GOL KRALLIGI
+  if(/gol krallığ|en çok gol|gol atan|top scorer/.test(low)){
+    return showGolKralligi();
   }
 
   // WhatsApp sesli komut
@@ -1099,6 +1190,7 @@ function stopListen(){ if(recognition) recognition.stop(); isListening=false; se
 async function handleInput(text){
   const local=getLocalReply(text);
   if(local==='__REMINDER_ADDED__') return;
+  if(local==='__DISPLAY_ONLY__') return; // Sesli yanıt zaten verilmiş, Claude çağırma
   if(local){ setTimeout(()=>{ addMsg('jarvis',local); speak(local); },350); }
   else { setUI('thinking'); showTyping(true); const r=await askClaude(text); showTyping(false); addMsg('jarvis',r); speak(r); }
 }
